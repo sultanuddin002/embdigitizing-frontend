@@ -1,8 +1,47 @@
- 
-body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer button */
+
+.footerButton:hover {
+  background-color: #a1012d;
+}
+
+/* slider custom css*/
+
+.swiper {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide {
+  background-position: center center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.sliderButton:hover {
+  background-color: #a1012d;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  /* color: #0d2456!important; */
+}
+
+/* Home page */
+.serviceButton {
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+.serviceButton:hover {
+  background-color: #0d2456;
 }

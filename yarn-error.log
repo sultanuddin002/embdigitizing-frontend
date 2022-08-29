@@ -1,0 +1,57 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\sultan_dev\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-photo-gallery
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\sultan_dev\AppData\Local\Microsoft\WindowsApps;C:\Users\sultan_dev\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\bin;C:\Program Files\Git\bin\cmd;C:\Users\sultan_dev\AppData\Roaming\npm;C:\cygwin64;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  14.15.4
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: 1864:error:1408F119:SSL routines:ssl3_get_record:decryption failed or bad record mac:c:\ws\deps\openssl\openssl\ssl\record\ssl3_record.c:677:
+
+npm manifest: 
+  {
+    "name": "frontend",
+    "version": "1.0.0",
+    "private": true,
+    "description": "frontend",
+    "author": "sultanuddin002",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "develop": "gatsby develop",
+      "start": "gatsby develop",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean"
+    },
+    "dependencies": {
+      "@emotion/react": "^11.10.0",
+      "@emotion/styled": "^11.10.0",
+      "@material-ui/core": "^4.12.4",
+      "@mui/icons-material": "^5.8.4",
+      "@mui/material": "^5.10.1",
+      "@mui/styles": "^5.9.3",
+      "gatsby": "^4.21.1",
+      "gatsby-plugin-material-ui": "^4.0.2",
+      "gatsby-plugin-web-font-loader": "^1.0.4",
+      "react": "^18.1.0",
+      "react-dom": "^18.1.0",
+      "react-images": "^1.2.0-beta.7",
+      "swiper": "^8.3.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

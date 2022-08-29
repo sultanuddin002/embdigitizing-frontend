@@ -1,4 +1,5 @@
 import * as React from "react";
+import Footer from "./footer";
 import Header from "./header";
 import HeaderTwo from "./header-two";
 //  import { useStaticQuery, graphql } from "gatsby"
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
       {/* <div /> */}
       <HeaderTwo />
       <main>{children}</main>
+      <Footer />
       {/* <Footer /> */}
     </>
   );
