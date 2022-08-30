@@ -90,16 +90,16 @@ const HomeCustom = () => {
       </Grid>
       <Grid item>
         <Grid container justifyContent="center" alignItems="center">
-          <Grid item sx={{ padding: "20px" }} md={3} sm={6}>
+          <Grid item sx={{ padding: "20px" }} md={3} sm={6} xs={6}>
             <CustomCardSection img={bag} title="Hat" />
           </Grid>
-          <Grid item sx={{ padding: "20px" }} md={3} sm={6}>
+          <Grid item sx={{ padding: "20px" }} md={3} sm={6} xs={6}>
             <CustomCardSection img={cap} title="Cap" />
           </Grid>
-          <Grid item sx={{ padding: "20px" }} md={3} sm={6}>
+          <Grid item sx={{ padding: "20px" }} md={3} sm={6} xs={6}>
             <CustomCardSection img={jacket} title="Jackets" />
           </Grid>
-          <Grid item sx={{ padding: "20px" }} md={3} sm={6}>
+          <Grid item sx={{ padding: "20px" }} md={3} sm={6} xs={6}>
             <CustomCardSection img={tshirt} title="T-Shirt" />
           </Grid>
         </Grid>

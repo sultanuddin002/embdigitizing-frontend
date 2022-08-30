@@ -112,7 +112,7 @@ const desktopMenu = (
 
 function IconSection(props) {
   return (
-    <Grid container spacing={2} justifyContent="flex-start" alignItems="center">
+    <Grid container spacing={1} justifyContent="flex-start" alignItems="center">
       <Grid item>{props.children}</Grid>
       <Grid item>
         <Typography variant="body2" sx={{ color: "#fff" }}>
@@ -220,8 +220,8 @@ const HeaderTwo = () => {
         <Grid item md={3} xs={4}>
           <Grid
             container
-            spacing={3}
-            sx={{ paddingRight: "40px" }}
+            spacing={1}
+            sx={{ paddingRight: "30px" }}
             classes={{ root: classes.socialContainer }}
           >
             <Grid item>

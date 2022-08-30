@@ -14,7 +14,7 @@ import serviceTwoImg from "../../../images/home-service-2.jpg";
 
 function CardServiceSection(props) {
   return (
-    <Grid item sx={{ padding: "0px 40px" }}>
+    <Grid item sx={{ padding: "20px 40px" }}>
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"

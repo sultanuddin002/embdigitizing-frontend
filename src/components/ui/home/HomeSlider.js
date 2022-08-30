@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   },
   descriptionContainer: {
     [theme.breakpoints.down("md")]: {
-      width: "400px",
+      width: "300px",
     },
   },
 }));
