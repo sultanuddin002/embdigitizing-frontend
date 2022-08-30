@@ -23,10 +23,10 @@ body {
   background-size: cover;
 } */
 
-/* .swiper-slide img {
+.swiper-slide img {
   display: block;
   width: 100%;
-} */
+}
 
 /* .sliderButton:hover {
   background-color: #a1012d;
@@ -38,10 +38,10 @@ body {
 }
 
 /* Home page */
-.serviceButton {
+/* .serviceButton {
   border-radius: 20px;
   padding: 8px 20px;
-}
-.serviceButton:hover {
+} */
+/* .serviceButton:hover {
   background-color: #0d2456;
-}
+} */

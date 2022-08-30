@@ -36,16 +36,22 @@ const useStyles = makeStyles((theme) => ({
   },
   iconContainer: {
     [theme.breakpoints.down("md")]: {
-      width: "500px!important",
+      // width: "500px!important",
     },
     [theme.breakpoints.down("sm")]: {
-      width: "340px!important",
+      // width: "340px!important",
       fontSize: "1rem",
+      flexWrap: "nowrap!important",
     },
   },
   subTitleSection: {
     [theme.breakpoints.down("md")]: {
       textAlign: "center",
+    },
+  },
+  iconInner: {
+    [theme.breakpoints.down("md")]: {
+      width: "3rem",
     },
   },
 }));
@@ -95,7 +101,7 @@ function FeatureSection(props) {
         columnSpacing={{ sm: 4, md: 3 }}
         classes={{ root: classes.iconContainer }}
       >
-        <Grid item>
+        <Grid item classes={{ root: classes.iconInner }}>
           <DoubleArrowSharpIcon
             sx={{
               color: theme.palette.secondary.main,

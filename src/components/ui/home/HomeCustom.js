@@ -29,6 +29,12 @@ const useStyles = makeStyles((theme) => ({
   redColor: {
     color: theme.palette.primary.main,
   },
+  button: {
+    "&:hover": {
+      backgroundColor: "#0D2456!important",
+      color: "#fff",
+    },
+  },
 }));
 
 function CustomCardSection(props) {
@@ -49,7 +55,8 @@ function CustomCardSection(props) {
       </CardContent>
       <CardActions sx={{ justifyContent: "center", padding: "20px 0" }}>
         <Button
-          className="serviceButton"
+          classes={{ root: classes.button }}
+          // className="serviceButton"
           sx={{
             ...theme.typography.body1,
             color: "#fff",

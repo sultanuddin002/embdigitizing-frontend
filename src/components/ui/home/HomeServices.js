@@ -7,12 +7,23 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import theme from "../theme";
+import { makeStyles } from "@mui/styles";
 
 // images
 import serviceOneImg from "../../../images/home-service-1.jpg";
 import serviceTwoImg from "../../../images/home-service-2.jpg";
 
+const useStyles = makeStyles((theme) => ({
+  button: {
+    "&:hover": {
+      backgroundColor: "#0D2456!important",
+      color: "#fff",
+    },
+  },
+}));
+
 function CardServiceSection(props) {
+  const classes = useStyles();
   return (
     <Grid item sx={{ padding: "20px 40px" }}>
       <Card sx={{ maxWidth: 345 }}>
@@ -38,12 +49,14 @@ function CardServiceSection(props) {
         </CardContent>
         <CardActions sx={{ justifyContent: "center", padding: "20px 0" }}>
           <Button
-            className="serviceButton"
+            // className="serviceButton"
+            classes={{ root: classes.button }}
             sx={{
               ...theme.typography.body1,
               color: "#fff",
               backgroundColor: theme.palette.primary.main,
               textAlign: "center",
+              borderRadius: "20px",
             }}
           >
             {props.buttonTitle}
@@ -55,6 +68,7 @@ function CardServiceSection(props) {
 }
 
 const HomeServices = () => {
+  const classes = useStyles();
   return (
     <Grid
       container
