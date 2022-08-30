@@ -65,13 +65,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   topbarSection: {
-    [theme.breakpoints.down("md")]: {
-      height: "150px",
-    },
-    [theme.breakpoints.up("md")]: {
-      height: "50px",
-    },
-    [theme.breakpoints.down("xs")]: {},
+    padding: "10px 0",
+    // [theme.breakpoints.down("md")]: {
+    //   height: "100%",
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //   height: "100%",
+    // },
+    // [theme.breakpoints.down("xs")]: {},
   },
   contactContainer: {
     [theme.breakpoints.up("md")]: {
@@ -182,10 +183,7 @@ const HeaderTwo = () => {
         direction="column"
         justifyContent="flex-start"
         alignItems="flex-start"
-      >
-        <span>{`theme.breakpoints.up('sm') matches: ${mobileSizeMatches}`}</span>
-        <span>{`theme.breakpoints.up('sm') matches: ${laptopSizeMatches}`}</span>
-      </Grid>
+      ></Grid>
       <Grid
         container
         justifyContent="space-around"

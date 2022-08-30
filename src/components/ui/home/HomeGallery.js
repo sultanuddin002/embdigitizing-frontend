@@ -28,14 +28,19 @@ const HomeGallery = () => {
       alignItems="center"
       sx={{
         backgroundColor: theme.palette.secondary.main,
-        padding: "5% 10%",
-        height: "700px",
+        padding: "10% 10%",
+        height: "100%",
       }}
     >
       <Grid item>
         <Typography
           variant="h2"
-          sx={{ textTransform: "uppercase", color: "#fff", fontWeight: "bold", padding:"10px 0" }}
+          sx={{
+            textTransform: "uppercase",
+            color: "#fff",
+            fontWeight: "bold",
+            padding: "40px 0",
+          }}
         >
           our portfolio
         </Typography>

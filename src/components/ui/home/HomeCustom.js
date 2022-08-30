@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 function CustomCardSection(props) {
   const classes = useStyles();
   return (
-    <Card sx={{ maxWidth: 200 }}>
+    <Card>
       <CardMedia
         component="img"
         height="200"
@@ -74,7 +74,7 @@ const HomeCustom = () => {
       direction="column"
       justifyContent="center"
       alignItems="center"
-      sx={{ height: "700px", backgroundColor: "#fff" }}
+      sx={{ height: "100%", backgroundColor: "#fff", padding: "70px 0" }}
     >
       <Grid item>
         <Typography
@@ -89,17 +89,17 @@ const HomeCustom = () => {
         </Typography>
       </Grid>
       <Grid item>
-        <Grid container>
-          <Grid item sx={{ padding: "20px" }}>
+        <Grid container justifyContent="center" alignItems="center">
+          <Grid item sx={{ padding: "20px" }} md={3} sm={6}>
             <CustomCardSection img={bag} title="Hat" />
           </Grid>
-          <Grid item sx={{ padding: "20px" }}>
+          <Grid item sx={{ padding: "20px" }} md={3} sm={6}>
             <CustomCardSection img={cap} title="Cap" />
           </Grid>
-          <Grid item sx={{ padding: "20px" }}>
+          <Grid item sx={{ padding: "20px" }} md={3} sm={6}>
             <CustomCardSection img={jacket} title="Jackets" />
           </Grid>
-          <Grid item sx={{ padding: "20px" }}>
+          <Grid item sx={{ padding: "20px" }} md={3} sm={6}>
             <CustomCardSection img={tshirt} title="T-Shirt" />
           </Grid>
         </Grid>

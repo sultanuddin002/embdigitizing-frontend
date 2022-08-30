@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import theme from "./theme";
 import { makeStyles } from "@mui/styles";
-import logo from "../../images/logo-main.png";
+import logo from "../../images/logo-resize.png";
 import Button from "@mui/material/Button";
 import { Link } from "gatsby";
 
@@ -12,7 +12,6 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
-    width: "120px",
     backgroundColor: "#fff",
   },
   button: {
@@ -23,10 +22,23 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     backgroundColor: theme.palette.secondary.main,
-    maxHeight: "500px",
+    height: "100%",
   },
   divider: {
     borderColor: "#ded8d8   ",
+  },
+  servicePoint: {
+    [theme.breakpoints.up("md")]: {
+      paddingTop: "50px",
+    },
+  },
+  mainContainer: {
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "space-around",
+    },
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "center",
+    },
   },
 }));
 
@@ -50,13 +62,13 @@ const Footer = () => {
     <div className={classes.container}>
       <Grid
         container
-        justifyContent="space-around"
+        rowSpacing={3}
         alignItems="center"
-        spacing={4}
         sx={{
           backgroundColor: theme.palette.secondary.main,
           padding: "40px",
         }}
+        classes={{ root: classes.mainContainer }}
       >
         <Grid item md={4}>
           <Grid container direction="column" alignItems="flex-start">
@@ -77,7 +89,12 @@ const Footer = () => {
           </Grid>
         </Grid>
         <Grid item md={4}>
-          <Grid container direction="column" alignItems="flex-start">
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            columnSpacing={{ sm: 4 }}
+          >
             <Grid item>
               <Typography
                 variant="h2"
@@ -90,7 +107,7 @@ const Footer = () => {
               <Grid
                 container
                 justifyContent="flex-start"
-                sx={{ paddingTop: "50px" }}
+                classes={{ root: classes.servicePoint }}
               >
                 <Grid item>
                   <ChevronRightIcon

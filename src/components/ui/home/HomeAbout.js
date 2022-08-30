@@ -7,11 +7,48 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import theme from "../theme";
+import { makeStyles } from "@mui/styles";
 
 // icon
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import DoubleArrowSharpIcon from "@mui/icons-material/DoubleArrowSharp";
+
+const useStyles = makeStyles((theme) => ({
+  contentSection: {
+    [theme.breakpoints.down("md")]: {
+      padding: "30px",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "flex-start",
+      alignItems: "flex-start",
+    },
+  },
+  descriptionSection: {
+    [theme.breakpoints.up("md")]: {
+      textAlign: "left",
+    },
+    [theme.breakpoints.down("md")]: {
+      textAlign: "center",
+    },
+  },
+  iconContainer: {
+    [theme.breakpoints.down("md")]: {
+      width: "500px!important",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "340px!important",
+      fontSize: "1rem",
+    },
+  },
+  subTitleSection: {
+    [theme.breakpoints.down("md")]: {
+      textAlign: "center",
+    },
+  },
+}));
 
 const aboutCardSection = (
   <Grid item sx={{ padding: "20px 20px" }}>
@@ -48,11 +85,37 @@ const aboutCardSection = (
   </Grid>
 );
 
+function FeatureSection(props) {
+  const classes = useStyles();
+  return (
+    <Grid item>
+      <Grid
+        container
+        direction="row"
+        columnSpacing={{ sm: 4, md: 3 }}
+        classes={{ root: classes.iconContainer }}
+      >
+        <Grid item>
+          <DoubleArrowSharpIcon
+            sx={{
+              color: theme.palette.secondary.main,
+            }}
+          />
+        </Grid>
+        <Grid item>
+          <Typography variant="body1">{props.text}</Typography>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+}
+
 const HomeAbout = () => {
+  const classes = useStyles();
   return (
     <Grid
       container
-      sx={{ height: "700px" }}
+      sx={{ height: "100%", padding: "50px 0" }}
       justifyContent="center"
       alignItems="center"
     >
@@ -81,8 +144,7 @@ const HomeAbout = () => {
         <Grid
           container
           direction="column"
-          justifyContent="flex-start"
-          alignItems="flex-start"
+          classes={{ root: classes.contentSection }}
         >
           <Grid item>
             <Typography
@@ -93,12 +155,20 @@ const HomeAbout = () => {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1" sx={{ padding: "8px 0" }}>
+            <Typography
+              variant="body1"
+              sx={{ padding: "8px 0" }}
+              classes={{ root: classes.subTitleSection }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1" sx={{ padding: "0 8px 18px 0px" }}>
+            <Typography
+              variant="body1"
+              sx={{ padding: "0 8px 18px 0px" }}
+              classes={{ root: classes.descriptionSection }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
               auctor ligula. Proin nisi ligula, luctus quis nisl vitae, aliquet
               bibendum ante. Nam viverra pulvinar velit ac euismod. Cras porta
@@ -107,64 +177,10 @@ const HomeAbout = () => {
               rhoncus risus sed dictum pulvinar.
             </Typography>
           </Grid>
-          <Grid item>
-            <Grid container direction="row">
-              <Grid item>
-                <DoubleArrowSharpIcon
-                  sx={{
-                    color: theme.palette.secondary.main,
-                  }}
-                />
-              </Grid>
-              <Grid item>
-                <Typography variant="body1">
-                  Top-class Quality In Competitive Pricing
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Grid container direction="row">
-              <Grid item>
-                <DoubleArrowSharpIcon
-                  sx={{ color: theme.palette.secondary.main }}
-                />
-              </Grid>
-              <Grid item>
-                <Typography variant="body1">
-                  Fast Turnaround Time Of 12 Hours
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Grid container direction="row">
-              <Grid item>
-                <DoubleArrowSharpIcon
-                  sx={{ color: theme.palette.secondary.main }}
-                />
-              </Grid>
-              <Grid item>
-                <Typography variant="body1">
-                  Urgent Delivery Within 8 Hours Without Fee
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <Grid container direction="row">
-              <Grid item>
-                <DoubleArrowSharpIcon
-                  sx={{ color: theme.palette.secondary.main }}
-                />
-              </Grid>
-              <Grid item>
-                <Typography variant="body1">
-                  Standard Payment Mode Is Paypal
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
+          <FeatureSection text="Top-class Quality In Competitive Pricing" />
+          <FeatureSection text="Fast Turnaround Time Of 12 Hours" />
+          <FeatureSection text="Urgent Delivery Within 8 Hours Without Fee" />
+          <FeatureSection text="Standard Payment Mode Is Paypal" />
         </Grid>
       </Grid>
     </Grid>

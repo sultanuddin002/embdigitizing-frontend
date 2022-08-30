@@ -23,4 +23,6 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-// export const Head = () => <title>Home Page</title>;
+export const Head = () => (
+  <title>Create Custom Embroidery Design - EMBDigitized</title>
+);

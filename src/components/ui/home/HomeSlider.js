@@ -79,7 +79,77 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center center",
     backgroundSize: "cover",
   },
+  descriptionContainer: {
+    [theme.breakpoints.down("md")]: {
+      width: "400px",
+    },
+  },
 }));
+
+function SliderContent(props) {
+  const classes = useStyles();
+  return (
+    <Grid
+      container
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      classes={{ root: classes.innerGrid }}
+    >
+      <Grid item>
+        <Typography
+          variant="h1"
+          sx={{
+            color: "#fff",
+            textTransform: "uppercase",
+            fontSize: "3rem",
+            width: "100px",
+            textAlign: "center",
+            width: "300px",
+          }}
+        >
+          {props.title}
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#fff",
+            textTransform: "capitalize",
+            padding: "20px 0",
+          }}
+        >
+          {props.subTitle}
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Typography
+          variant="body1"
+          sx={{ color: "#fff", textAlign: "center" }}
+          classes={{ root: classes.descriptionContainer }}
+        >
+          {props.description}
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Button
+          classes={{ root: classes.button }}
+          sx={{
+            ...theme.typography.body1,
+            color: theme.palette.primary.main,
+            backgroundColor: "#fff",
+            margin: "20px 0px",
+            padding: "8px 20px",
+            borderRadius: "20px",
+          }}
+        >
+          {props.buttonText}
+        </Button>
+      </Grid>
+    </Grid>
+  );
+}
 
 const HomeSlider = () => {
   const classes = useStyles();
@@ -101,242 +171,49 @@ const HomeSlider = () => {
     >
       <SwiperSlide className={classes.swiperSlide}>
         <Paper classes={{ root: classes.slideOne }}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            classes={{ root: classes.innerGrid }}
-          >
-            <Grid item>
-              <Typography
-                variant="h1"
-                sx={{
-                  color: "#fff",
-                  textTransform: "uppercase",
-                  fontSize: "3rem",
-                  width: "100px",
-                  textAlign: "center",
-                  width: "300px",
-                }}
-              >
-                Welcome To embdigitized
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="h2"
-                sx={{
-                  color: "#fff",
-                  textTransform: "capitalize",
-                  padding: "20px 0",
-                }}
-              >
-                We digitized your artwork!
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body1" sx={{ color: "#fff" }}>
-                Do you need machine embriodery digitizing service with super
-                fast turnaround & excellent quality?
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Button
-                classes={{ root: classes.button }}
-                sx={{
-                  ...theme.typography.body1,
-                  color: theme.palette.primary.main,
-                  backgroundColor: "#fff",
-                  margin: "20px 0px",
-                  padding: "8px 20px",
-                  borderRadius: "20px",
-                }}
-              >
-                Get Free Quote Now!
-              </Button>
-            </Grid>
-          </Grid>
+          <SliderContent
+            title="Welcome To embdigitized"
+            subTitle="We digitized your artwork!"
+            description="Do you need machine embriodery digitizing service with super
+        fast turnaround & excellent quality?"
+            buttonText="Get Free Quote Now!"
+          />
         </Paper>
       </SwiperSlide>
+
       <SwiperSlide className={classes.swiperSlide}>
         <Paper classes={{ root: classes.slideTwo }}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            classes={{ root: classes.innerGrid }}
-          >
-            <Grid item>
-              <Typography
-                variant="h1"
-                sx={{
-                  color: "#fff",
-                  textTransform: "uppercase",
-                  fontSize: "3rem",
-                  width: "100px",
-                  textAlign: "center",
-                  width: "300px",
-                }}
-              >
-                Welcome To embdigitized
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="h2"
-                sx={{
-                  color: "#fff",
-                  textTransform: "capitalize",
-                  padding: "20px 0",
-                }}
-              >
-                We digitized your artwork!
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body1" sx={{ color: "#fff" }}>
-                Do you need machine embriodery digitizing service with super
-                fast turnaround & excellent quality?
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Button
-                classes={{ root: classes.button }}
-                sx={{
-                  ...theme.typography.body1,
-                  color: theme.palette.primary.main,
-                  backgroundColor: "#fff",
-                  margin: "20px 0px",
-                  padding: "8px 20px",
-                  borderRadius: "20px",
-                }}
-              >
-                Get Free Quote Now!
-              </Button>
-            </Grid>
-          </Grid>
+          <SliderContent
+            title="Welcome To embdigitized"
+            subTitle="We digitized your artwork!"
+            description="Do you need machine embriodery digitizing service with super
+        fast turnaround & excellent quality?"
+            buttonText="Get Free Quote Now!"
+          />
         </Paper>
       </SwiperSlide>
+
       <SwiperSlide className={classes.swiperSlide}>
         <Paper classes={{ root: classes.slideThree }}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            classes={{ root: classes.innerGrid }}
-          >
-            <Grid item>
-              <Typography
-                variant="h1"
-                sx={{
-                  color: "#fff",
-                  textTransform: "uppercase",
-                  fontSize: "3rem",
-                  width: "100px",
-                  textAlign: "center",
-                  width: "300px",
-                }}
-              >
-                Welcome To embdigitized
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="h2"
-                sx={{
-                  color: "#fff",
-                  textTransform: "capitalize",
-                  padding: "20px 0",
-                }}
-              >
-                We digitized your artwork!
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body1" sx={{ color: "#fff" }}>
-                Do you need machine embriodery digitizing service with super
-                fast turnaround & excellent quality?
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Button
-                classes={{ root: classes.button }}
-                sx={{
-                  ...theme.typography.body1,
-                  color: theme.palette.primary.main,
-                  backgroundColor: "#fff",
-                  margin: "20px 0px",
-                  padding: "8px 20px",
-                  borderRadius: "20px",
-                }}
-              >
-                Get Free Quote Now!
-              </Button>
-            </Grid>
-          </Grid>
+          <SliderContent
+            title="Welcome To embdigitized"
+            subTitle="We digitized your artwork!"
+            description="Do you need machine embriodery digitizing service with super
+        fast turnaround & excellent quality?"
+            buttonText="Get Free Quote Now!"
+          />
         </Paper>
       </SwiperSlide>
+
       <SwiperSlide className={classes.swiperSlide}>
         <Paper classes={{ root: classes.slideFour }}>
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            classes={{ root: classes.innerGrid }}
-          >
-            <Grid item>
-              <Typography
-                variant="h1"
-                sx={{
-                  color: "#fff",
-                  textTransform: "uppercase",
-                  fontSize: "3rem",
-                  width: "100px",
-                  textAlign: "center",
-                  width: "300px",
-                }}
-              >
-                Welcome To embdigitized
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="h2"
-                sx={{
-                  color: "#fff",
-                  textTransform: "capitalize",
-                  padding: "20px 0",
-                }}
-              >
-                We digitized your artwork!
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body1" sx={{ color: "#fff" }}>
-                Do you need machine embriodery digitizing service with super
-                fast turnaround & excellent quality?
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Button
-                classes={{ root: classes.button }}
-                sx={{
-                  ...theme.typography.body1,
-                  color: theme.palette.primary.main,
-                  backgroundColor: "#fff",
-                  margin: "20px 0px",
-                  padding: "8px 20px",
-                  borderRadius: "20px",
-                }}
-              >
-                Get Free Quote Now!
-              </Button>
-            </Grid>
-          </Grid>
+          <SliderContent
+            title="Welcome To embdigitized"
+            subTitle="We digitized your artwork!"
+            description="Do you need machine embriodery digitizing service with super
+        fast turnaround & excellent quality?"
+            buttonText="Get Free Quote Now!"
+          />
         </Paper>
       </SwiperSlide>
     </Swiper>

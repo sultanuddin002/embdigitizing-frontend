@@ -12,11 +12,23 @@ import { makeStyles } from "@mui/styles";
 // icons
 import FormatQuoteSharpIcon from "@mui/icons-material/FormatQuoteSharp";
 
+const useStyles = makeStyles((theme) => ({
+  mainContainer: {
+    [theme.breakpoints.up("md")]: {
+      maxWidth: 300,
+    },
+    [theme.breakpoints.down("md")]: {
+      margin: "20px 0",
+    },
+  },
+}));
+
 function TestimonialsCardSection(props) {
+  const classes = useStyles();
   return (
     <Card
+      classes={{ root: classes.mainContainer }}
       sx={{
-        maxWidth: 300,
         backgroundColor: props.bgColor ? props.bgColor : "#fff",
       }}
     >
@@ -66,7 +78,7 @@ const HomeTestimonials = () => {
       direction="column"
       justifyContent="flex-start"
       alignItems="center"
-      sx={{ height: "500px" }}
+      sx={{ height: "100%", padding: "80px 0" }}
     >
       <Grid item>
         <Typography
