@@ -6,6 +6,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import theme from "../theme";
+import { withStyles } from "@mui/styles";
 // import required modules
 import { Navigation, Autoplay } from "swiper";
 
@@ -28,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center center",
     height: "500px",
+    display: "block",
+    width: "100%",
   },
   slideTwo: {
     backgroundImage: `url(${imageTwo})`,
@@ -35,6 +38,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center center",
     height: "500px",
+    display: "block",
+    width: "100%",
   },
   slideThree: {
     backgroundImage: `url(${imageThree})`,
@@ -42,6 +47,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center center",
     height: "500px",
+    display: "block",
+    width: "100%",
   },
   slideFour: {
     backgroundImage: `url(${imageFour})`,
@@ -49,6 +56,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center center",
     height: "500px",
+    display: "block",
+    width: "100%",
   },
   innerGrid: {
     height: "100%",
@@ -57,10 +66,18 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     "&:hover": {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: "#A1012D!important",
       color: "#fff",
       background: theme.palette.primary.main,
     },
+  },
+  swiper: {
+    width: "100%",
+    height: "500px",
+  },
+  swiperSlide: {
+    backgroundPosition: "center center",
+    backgroundSize: "cover",
   },
 }));
 
@@ -80,8 +97,9 @@ const HomeSlider = () => {
       }}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
+      className={classes.swiper}
     >
-      <SwiperSlide>
+      <SwiperSlide className={classes.swiperSlide}>
         <Paper classes={{ root: classes.slideOne }}>
           <Grid
             container
@@ -125,7 +143,6 @@ const HomeSlider = () => {
             </Grid>
             <Grid item>
               <Button
-                className="sliderButton"
                 classes={{ root: classes.button }}
                 sx={{
                   ...theme.typography.body1,
@@ -142,7 +159,7 @@ const HomeSlider = () => {
           </Grid>
         </Paper>
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className={classes.swiperSlide}>
         <Paper classes={{ root: classes.slideTwo }}>
           <Grid
             container
@@ -186,7 +203,6 @@ const HomeSlider = () => {
             </Grid>
             <Grid item>
               <Button
-                className="sliderButton"
                 classes={{ root: classes.button }}
                 sx={{
                   ...theme.typography.body1,
@@ -203,7 +219,7 @@ const HomeSlider = () => {
           </Grid>
         </Paper>
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className={classes.swiperSlide}>
         <Paper classes={{ root: classes.slideThree }}>
           <Grid
             container
@@ -247,7 +263,6 @@ const HomeSlider = () => {
             </Grid>
             <Grid item>
               <Button
-                className="sliderButton"
                 classes={{ root: classes.button }}
                 sx={{
                   ...theme.typography.body1,
@@ -264,65 +279,66 @@ const HomeSlider = () => {
           </Grid>
         </Paper>
       </SwiperSlide>
-      <Paper classes={{ root: classes.slideFour }}>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-          classes={{ root: classes.innerGrid }}
-        >
-          <Grid item>
-            <Typography
-              variant="h1"
-              sx={{
-                color: "#fff",
-                textTransform: "uppercase",
-                fontSize: "3rem",
-                width: "100px",
-                textAlign: "center",
-                width: "300px",
-              }}
-            >
-              Welcome To embdigitized
-            </Typography>
+      <SwiperSlide className={classes.swiperSlide}>
+        <Paper classes={{ root: classes.slideFour }}>
+          <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            classes={{ root: classes.innerGrid }}
+          >
+            <Grid item>
+              <Typography
+                variant="h1"
+                sx={{
+                  color: "#fff",
+                  textTransform: "uppercase",
+                  fontSize: "3rem",
+                  width: "100px",
+                  textAlign: "center",
+                  width: "300px",
+                }}
+              >
+                Welcome To embdigitized
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography
+                variant="h2"
+                sx={{
+                  color: "#fff",
+                  textTransform: "capitalize",
+                  padding: "20px 0",
+                }}
+              >
+                We digitized your artwork!
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" sx={{ color: "#fff" }}>
+                Do you need machine embriodery digitizing service with super
+                fast turnaround & excellent quality?
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Button
+                classes={{ root: classes.button }}
+                sx={{
+                  ...theme.typography.body1,
+                  color: theme.palette.primary.main,
+                  backgroundColor: "#fff",
+                  margin: "20px 0px",
+                  padding: "8px 20px",
+                  borderRadius: "20px",
+                }}
+              >
+                Get Free Quote Now!
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Typography
-              variant="h2"
-              sx={{
-                color: "#fff",
-                textTransform: "capitalize",
-                padding: "20px 0",
-              }}
-            >
-              We digitized your artwork!
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="body1" sx={{ color: "#fff" }}>
-              Do you need machine embriodery digitizing service with super fast
-              turnaround & excellent quality?
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Button
-              className="sliderButton"
-              classes={{ root: classes.button }}
-              sx={{
-                ...theme.typography.body1,
-                color: theme.palette.primary.main,
-                backgroundColor: "#fff",
-                margin: "20px 0px",
-                padding: "8px 20px",
-                borderRadius: "20px",
-              }}
-            >
-              Get Free Quote Now!
-            </Button>
-          </Grid>
-        </Grid>
-      </Paper>
+        </Paper>
+      </SwiperSlide>
     </Swiper>
   );
 };
