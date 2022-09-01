@@ -7,6 +7,7 @@ import HomeServices from "../components/ui/home/HomeServices";
 import HomeSlider from "../components/ui/home/HomeSlider";
 import HomeTestimonials from "../components/ui/home/HomeTestimonials";
 import Layout from "../components/ui/layout";
+import theme from "../components/ui/theme";
 
 const IndexPage = () => {
   return (
@@ -14,7 +15,11 @@ const IndexPage = () => {
       <HomeSlider />
       <HomeServices />
       <HomeAbout />
-      <HomeGallery />
+      <HomeGallery
+        title="our portfolio"
+        bgColor={theme.palette.secondary.main}
+        padding="10% 10%"
+      />
       <HomeCustom />
       <HomeTestimonials />
     </Layout>

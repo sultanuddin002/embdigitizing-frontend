@@ -62,7 +62,7 @@ const Footer = () => {
     <div className={classes.container}>
       <Grid
         container
-        rowSpacing={3}
+        rowSpacing={{ xs: 3, md: 0 }}
         alignItems="center"
         sx={{
           backgroundColor: theme.palette.secondary.main,

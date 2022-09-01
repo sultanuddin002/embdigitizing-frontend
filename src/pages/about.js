@@ -1,17 +1,16 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import AboutSection from "../components/ui/about/AboutSection";
 import Layout from "../components/ui/layout";
 
 const About = () => {
   return (
     <Layout>
-      <Typography variant="body1" sx={{ height: "200px", padding: "30px" }}>
-        This is About
-      </Typography>
+      <AboutSection />
     </Layout>
   );
 };
 
 export default About;
 
-// export const Head = () => <title>Home Page</title>;
+export const Head = () => <title>About US - EMBDigitized</title>;

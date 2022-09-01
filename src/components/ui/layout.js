@@ -1,7 +1,6 @@
 import * as React from "react";
 import Footer from "./footer";
 import Header from "./header";
-import HeaderTwo from "./header-two";
 //  import { useStaticQuery, graphql } from "gatsby"
 
 //  import Header from "./header"
@@ -27,7 +26,7 @@ const Layout = ({ children }) => {
       {/* <Header categories={data.allStrapiCategory.edges} /> */}
       {/* <div style={{ marginBottom: "10rem" }} /> */}
       {/* <div /> */}
-      <HeaderTwo />
+      <Header />
       <main>{children}</main>
       <Footer />
       {/* <Footer /> */}

@@ -6,7 +6,7 @@ import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { photos } from "./photos";
 
-const HomeGallery = () => {
+const HomeGallery = (props) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -27,8 +27,8 @@ const HomeGallery = () => {
       justifyContent="center"
       alignItems="center"
       sx={{
-        backgroundColor: theme.palette.secondary.main,
-        padding: "10% 10%",
+        backgroundColor: props.bgColor,
+        padding: props.padding,
         height: "100%",
       }}
     >
@@ -42,7 +42,7 @@ const HomeGallery = () => {
             padding: "40px 0",
           }}
         >
-          our portfolio
+          {props.title}
         </Typography>
       </Grid>
       <Grid item>
