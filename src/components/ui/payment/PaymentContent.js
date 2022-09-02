@@ -33,6 +33,14 @@ const useStyles = makeStyles((theme) => ({
     filter:
       "invert(11%) sepia(81%) saturate(4693%) hue-rotate(334deg) brightness(83%) contrast(107%)",
   },
+  iconContainer: {
+    [theme.breakpoints.up("md")]: {
+      width: "450px",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+    },
+  },
 }));
 
 const PaymentContent = () => {
@@ -84,6 +92,7 @@ const PaymentContent = () => {
             color: "#000",
             textTransform: "uppercase",
             padding: "60px 0 30px 0",
+            textAlign: "center",
           }}
         >
           Accepted Payment options
@@ -99,7 +108,11 @@ const PaymentContent = () => {
           alignItems="center"
           sx={{ padding: "20px 0" }}
         >
-          <Grid item sx={{ width: "450px", textAlign: "center" }}>
+          <Grid
+            item
+            sx={{ textAlign: "center" }}
+            classes={{ root: classes.iconContainer }}
+          >
             <img src={paypal} className={classes.iconSection} />
             <Typography
               variant="h3"
@@ -112,7 +125,11 @@ const PaymentContent = () => {
               Paypal
             </Typography>
           </Grid>
-          <Grid item sx={{ width: "450px", textAlign: "center" }}>
+          <Grid
+            item
+            sx={{ textAlign: "center" }}
+            classes={{ root: classes.iconContainer }}
+          >
             <img src={creditCard} className={classes.iconSection} />
             <Typography
               variant="h3"
