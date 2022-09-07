@@ -22,6 +22,12 @@ const useStyles = makeStyles((theme) => ({
     // color: theme.palette.secondary.main,
     filter:
       "invert(11%) sepia(53%) saturate(2473%) hue-rotate(207deg) brightness(94%) contrast(100%)",
+    [theme.breakpoints.up("md")]: {
+      height: "200px",
+    },
+    [theme.breakpoints.down("md")]: {
+      height: "100%",
+    },
   },
   iconRoot: {
     textAlign: "center",
@@ -43,7 +49,7 @@ function CustomCardSection(props) {
     <Card>
       <CardMedia
         component="img"
-        height="200"
+        // height="200"
         image={props.img}
         alt="services image"
         classes={{ root: classes.imageIcon }}

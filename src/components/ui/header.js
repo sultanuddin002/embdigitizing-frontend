@@ -18,6 +18,7 @@ import { makeStyles } from "@mui/styles";
 import logo from "../../images/logo-resize.png";
 import { Link } from "gatsby";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Popover from "@mui/material/Popover";
 
 // icons
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -38,18 +39,74 @@ const routes = [
     link: "/about",
   },
   {
-    name: "Payment",
-    link: "/payment",
+    name: "Services",
   },
   {
     name: "Portfolio",
     link: "/portfolio",
   },
   {
+    name: "Payment",
+    link: "/payment",
+  },
+
+  {
     name: "Contact Us",
     link: "/contact",
   },
 ];
+
+const routesMobile = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "About",
+    link: "/about",
+  },
+  {
+    name: "Embrodiery",
+    link: "/embrodiery",
+  },
+  {
+    name: "Patches",
+    link: "/patches",
+  },
+  {
+    name: "3D Puffs",
+    link: "/puffs",
+  },
+  {
+    name: "Portfolio",
+    link: "/portfolio",
+  },
+  {
+    name: "Payment",
+    link: "/payment",
+  },
+
+  {
+    name: "Contact Us",
+    link: "/contact",
+  },
+];
+
+const serviceRoutes = [
+  {
+    name: "Embrodiery",
+    link: "/embrodiery",
+  },
+  {
+    name: "Patches",
+    link: "/patches",
+  },
+  {
+    name: "3D Puffs",
+    link: "/puffs",
+  },
+];
+
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const useStyles = makeStyles((theme) => ({
@@ -137,6 +194,61 @@ const activeIndex = () => {
 const HeaderTwo = () => {
   const classes = useStyles();
 
+  // Popover for sub menu
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    console.log("Service button clicked");
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+
+  // Additional services component
+  const otherServices = (
+    <Popover
+      id={id}
+      open={open}
+      anchorEl={anchorEl}
+      onClose={handleClose}
+      anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "left",
+      }}
+    >
+      <Tabs
+        orientation="vertical"
+        sx={{
+          //   marginRight: "auto",
+          marginLeft: "auto",
+        }}
+        value={activeIndex()}
+        classes={{
+          indicator: classes.coloredIndicator,
+        }}
+      >
+        {serviceRoutes.map((singleService) => (
+          <Tab
+            component={Link}
+            to={singleService.link}
+            label={singleService.name}
+            key={singleService.name}
+            sx={{
+              color: theme.palette.secondary.main,
+              ...theme.typography.body1,
+              textTransform: "capitalize",
+            }}
+          />
+        ))}
+      </Tabs>
+    </Popover>
+  );
+
   // selector for menu
 
   // Drawer element here
@@ -163,7 +275,7 @@ const HeaderTwo = () => {
       sx={{ width: 250 }}
     >
       <List>
-        {routes.map((text, index) => (
+        {routesMobile.map((text, index) => (
           <ListItem
             key={text.name}
             disablePadding
@@ -262,7 +374,9 @@ const HeaderTwo = () => {
       <AppBar sx={{ backgroundColor: "#fff" }} position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <img src={logo} alt="logo" className={classes.logo} />
+            <Box component={Link} to="/">
+              <img src={logo} alt="logo" className={classes.logo} />
+            </Box>
             {mobileSizeMatches ? (
               <IconButton sx={{ marginLeft: "auto" }}>
                 <MenuIcon
@@ -293,10 +407,16 @@ const HeaderTwo = () => {
               >
                 {routes.map((route) => (
                   <Tab
-                    component={Link}
-                    to={route.link}
+                    component={route.name === "Services" ? undefined : Link}
+                    to={route.name === "Services" ? undefined : route.link}
                     label={route.name}
                     key={route.name}
+                    onClick={
+                      route.name === "Services" ? handleClick : undefined
+                    }
+                    aria-describedby={
+                      route.name === "Services" ? id : undefined
+                    }
                     sx={{
                       color: theme.palette.secondary.main,
                       ...theme.typography.body1,
@@ -304,6 +424,7 @@ const HeaderTwo = () => {
                     }}
                   />
                 ))}
+                {otherServices}
               </Tabs>
             )}
           </Toolbar>
