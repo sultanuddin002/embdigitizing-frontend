@@ -46,8 +46,8 @@ const routes = [
     link: "/portfolio",
   },
   {
-    name: "Payment",
-    link: "/payment",
+    name: "Pricing",
+    link: "/pricing",
   },
 
   {
@@ -82,8 +82,8 @@ const routesMobile = [
     link: "/portfolio",
   },
   {
-    name: "Payment",
-    link: "/payment",
+    name: "Pricing",
+    link: "/pricing",
   },
 
   {
@@ -143,31 +143,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const desktopMenu = (
-//   <Tabs
-//     sx={{
-//       //   marginRight: "auto",
-//       marginLeft: "auto",
-//     }}
-//     value={activeIndex()}
-//     classes={{ indicator: classes.coloredIndicator, root: classes.tabs }}
-//   >
-//     {routes.map((route) => (
-//       <Tab
-//         component={Link}
-//         to={route.link}
-//         label={route.name}
-//         key={route.name}
-//         sx={{
-//           color: theme.palette.secondary.main,
-//           ...theme.typography.body1,
-//           textTransform: "capitalize",
-//         }}
-//       />
-//     ))}
-//   </Tabs>
-// );
-
 function IconSection(props) {
   return (
     <Grid container spacing={1} justifyContent="flex-start" alignItems="center">
@@ -185,6 +160,30 @@ const activeIndex = () => {
   if (typeof window != "undefined") {
     const found = routes.indexOf(
       routes.filter(({ name, link }) => link === window.location.pathname)[0]
+    );
+
+    return found === -1 ? false : found;
+  }
+};
+
+const activeIndexMobile = () => {
+  if (typeof window != "undefined") {
+    const found = routesMobile.indexOf(
+      routesMobile.filter(
+        ({ name, link }) => link === window.location.pathname
+      )[0]
+    );
+
+    return found === -1 ? false : found;
+  }
+};
+
+const activeIndexServices = () => {
+  if (typeof window != "undefined") {
+    const found = serviceRoutes.indexOf(
+      serviceRoutes.filter(
+        ({ name, link }) => link === window.location.pathname
+      )[0]
     );
 
     return found === -1 ? false : found;
@@ -227,7 +226,7 @@ const HeaderTwo = () => {
           //   marginRight: "auto",
           marginLeft: "auto",
         }}
-        value={activeIndex()}
+        value={activeIndexServices()}
         classes={{
           indicator: classes.coloredIndicator,
         }}
@@ -279,7 +278,7 @@ const HeaderTwo = () => {
           <ListItem
             key={text.name}
             disablePadding
-            selected={activeIndex() === index}
+            selected={activeIndexMobile() === index}
             divider
           >
             <ListItemButton component={Link} to={text.link}>
