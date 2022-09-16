@@ -51,66 +51,114 @@ const useStyles = makeStyles((theme) => ({
 
 function PricingCard(props) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card
+      sx={{
+        minWidth: 275,
+        backgroundColor: props.bgColor ? theme.palette.primary.main : "#fff",
+        // boxShadow: "5px 5px #cccccc",
+        boxShadow: "0px 0px 3px 4px rgba(166,166,166,0.76)",
+      }}
+    >
       <CardContent>
         <Typography
           variant="h3"
-          color={theme.palette.primary.main}
-          sx={{ textTransform: "uppercase" }}
+          color={props.bgColor ? "#fff" : theme.palette.primary.main}
+          sx={{
+            textTransform: "uppercase",
+            textAlign: "center",
+            fontWeight: "normal",
+          }}
         >
           {props.title}
         </Typography>
-        <Typography variant="h5" component="div">
+        <Typography
+          variant="h5"
+          component="div"
+          sx={{
+            textAlign: "center",
+          }}
+        >
           {props.subHeading}
         </Typography>
         <Typography
           variant="h2"
-          sx={{ mb: 1.5 }}
-          color={theme.palette.secondary.main}
+          sx={{ mb: 1.5, pt: 2, textAlign: "center", fontSize: "50px" }}
+          color={props.bgColor ? "#fff" : theme.palette.secondary.main}
         >
           {props.price}
+        </Typography>
+        <Typography
+          variant="h4"
+          sx={{
+            mb: 1.5,
+            textAlign: "center",
+            textTransform: "uppercase",
+            fontFamily: "Poppins!important",
+          }}
+          color={props.bgColor ? "#fff" : theme.palette.secondary.main}
+        >
+          {props.stitches}
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            mb: 1.5,
+            textTransform: "uppercase",
+            fontWeight: "bold",
+            textAlign: "center",
+            fontFamily: "Anton!important",
+            letterSpacing: 2.5,
+          }}
+          color={props.bgColor ? "#fff" : theme.palette.secondary.main}
+        >
+          {props.items}
         </Typography>
 
         {props.features.map((feature) => (
           <Grid container justifyContent="flex-start" alignItems="center">
             <Grid item>
-              <CheckBoxIcon sx={{ color: theme.palette.primary.main, pr: 1 }} />
+              <CheckBoxIcon
+                sx={{
+                  color: props.bgColor ? "#fff" : theme.palette.secondary.main,
+                  pr: 1,
+                }}
+              />
             </Grid>
             <Grid item>
-              <Typography variant="body2">{feature}</Typography>
+              <Typography
+                variant="body2"
+                color={props.bgColor ? "#fff" : theme.palette.secondary.main}
+              >
+                {feature}
+              </Typography>
             </Grid>
           </Grid>
         ))}
       </CardContent>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small">Learn More</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
 
 const similarDetails = [
-  "Excellent quality",
-  "Superfast turnaround",
-  "Free file format change",
-  "Free design editing",
-  "Free design backup",
-  "Hold at any time",
-  "24/7 support",
+  "Best Quality Designs",
+  "Free Minor Edits",
+  "Major Edits (additional charges)",
+  "Free Size Change (within 25%)",
+  "All supported formats available",
+  "No urgent fees",
+  "24/7 Support",
 ];
 
-const basicFeatures = ["10 designs included", "+2 free designs"];
+const basicFeatures = ["$2 Per 1000 Stitches", "Turnaround 18-24 hrs"];
 
-const standardFeatures = [
-  "25 designs included",
-  "+5 free designs",
-  "No urgent fee",
-];
+const standardFeatures = ["$2 Per 1000 Stitches", "Turnaround 8-16 hrs"];
 
 const premiumFeatures = [
-  "50 designs included",
-  "+10 free designs",
-  "No urgent fee",
+  "$2 Per 1000 Stitches",
+  "Turnaround time depends on complexity of design ",
 ];
 
 const PricingContent = () => {
@@ -145,7 +193,7 @@ const PricingContent = () => {
         >
           Checkout our pricing options as per your requirement
         </Typography>
-        <Typography
+        {/* <Typography
           variant="body2"
           sx={{
             textAlign: "center",
@@ -153,7 +201,7 @@ const PricingContent = () => {
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
           auctor ligula.
-        </Typography>
+        </Typography> */}
       </Grid>
       <Grid item>
         {/* Create 3 cards here in horizontal */}
@@ -169,7 +217,9 @@ const PricingContent = () => {
             <PricingCard
               title="basic"
               subTitle="Best for starting businesses"
-              price="$90/month"
+              items="For caps and left chests"
+              price="$15"
+              stitches="10,000 stitches"
               features={[...basicFeatures, ...similarDetails]}
             />
           </Grid>
@@ -177,15 +227,20 @@ const PricingContent = () => {
             <PricingCard
               title="standard"
               subTitle="Best for medium businesses"
-              price="$200/month"
+              items="For caps and left chests"
+              price="$25"
+              stitches="20,000 stitches"
               features={[...standardFeatures, ...similarDetails]}
+              bgColor={true}
             />
           </Grid>
           <Grid item>
             <PricingCard
-              title="premium"
+              title="Professional"
               subTitle="Best for large enterprises"
-              price="$400/month"
+              items="For jacket backs"
+              price="$40"
+              stitches="50,000 stitches"
               features={[...premiumFeatures, ...similarDetails]}
             />
           </Grid>

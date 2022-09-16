@@ -69,7 +69,7 @@ const PortfolioContent = () => {
             fontWeight: "200",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Check out our embroidery digitizing work
         </Typography>
       </Grid>
       <Grid item>

@@ -20,7 +20,7 @@ const IndexPage = () => {
         bgColor={theme.palette.secondary.main}
         padding="10% 10%"
       />
-      <HomeCustom />
+      {/* <HomeCustom /> */}
       <HomeTestimonials />
     </Layout>
   );

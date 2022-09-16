@@ -12,6 +12,8 @@ import { makeStyles } from "@mui/styles";
 // images
 import serviceOneImg from "../../../images/home-service-1.jpg";
 import serviceTwoImg from "../../../images/home-service-2.jpg";
+import serviceThreeImg from "../../../images/client-4.jpg";
+import serviceFourImg from "../../../images/client-1.jpg";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -78,22 +80,23 @@ const HomeServices = () => {
       sx={{ height: "100%", padding: "50px 0px", backgroundColor: "#fff" }}
     >
       <CardServiceSection
-        image={serviceOneImg}
+        image={serviceThreeImg}
         title="Embroidery Digitizing"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-        auctor ligula. Proin nisi ligula, luctus quis nisl vitae, aliquet
-        bibendum ante. Nam viverra pulvinar velit ac euismod. Cras porta
-        libero ut velit vehicula, in maximus."
-        buttonTitle="Order Now"
+        description="Are you looking for embroidery digitizing services with someone who has more than 20 years of experience in working with all types of stitch types? Simply contact EMBDigitizing where you will get the best quality guarantee."
+        buttonTitle="Learn More"
+      />
+
+      <CardServiceSection
+        image={serviceFourImg}
+        title="Patches Digitizing"
+        description="The use of Patches for T-shirts, left pocket, bags, and caps are getting in demand every passing day. If you are looking for quality and fast turn-around time for your patches digitizing solution, contact us and we’ll provide our amazing embroidery digitizing services for amazing patches designing. "
+        buttonTitle="Learn More"
       />
 
       <CardServiceSection
         image={serviceTwoImg}
         title="Get A Free Quote"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-        auctor ligula. Proin nisi ligula, luctus quis nisl vitae, aliquet
-        bibendum ante. Nam viverra pulvinar velit ac euismod. Cras porta
-        libero ut velit vehicula, in maximus."
+        description="Do you have a design with you and want to convert it into an embroidery digitizing format for your required fabric type? Simply contact us and provide the details about your work. We will offer you a comprehensive quote including cost, turnaround time, and every query that you have regarding the work."
         buttonTitle="Quote Now"
       />
     </Grid>

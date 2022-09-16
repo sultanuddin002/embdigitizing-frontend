@@ -29,7 +29,12 @@ const useStyles = makeStyles((theme) => ({
   },
   servicePoint: {
     [theme.breakpoints.up("md")]: {
-      paddingTop: "50px",
+      paddingTop: "10px",
+    },
+  },
+  serviceHeading: {
+    [theme.breakpoints.up("md")]: {
+      paddingBottom: "50px",
     },
   },
   mainContainer: {
@@ -54,6 +59,44 @@ const footerPages = [
   { label: "Privacy Policy", link: "/privacy-policy" },
   { label: "Terms and Conditions", link: "/terms-conditions" },
 ];
+
+const servicesRoutes = [
+  {
+    label: "Embroidery Digitizing",
+    link: "/embrodiery",
+  },
+  {
+    label: "Patches Digitizing",
+    link: "/patches",
+  },
+];
+
+function ServiceBullets(props) {
+  const classes = useStyles();
+  return (
+    <Grid item>
+      <Grid
+        container
+        alignItems="flex-start!important"
+        classes={{ root: classes.servicePoint }}
+      >
+        <Grid item>
+          <ChevronRightIcon sx={{ color: "#fff", fontWeight: "bold" }} />
+        </Grid>
+        <Grid item>
+          <Typography
+            component={Link}
+            to={props.link}
+            variant="h3"
+            sx={{ color: "#fff", textDecoration: "none" }}
+          >
+            {props.text}
+          </Typography>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+}
 
 const Footer = () => {
   const classes = useStyles();
@@ -80,10 +123,11 @@ const Footer = () => {
                 variant="body2"
                 sx={{ color: "#fff", paddingTop: "30px" }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                at auctor ligula. Proin nisi ligula, luctus quis nisl vitae,
-                aliquet bibendum ante. Nam viverra pulvinar velit ac euismod.
-                Cras porta libero ut velit vehicula,
+                EMBDigitized is an embroidery digitizing service with experience
+                working in all types of fabric, stitches, and designs needed for
+                your Embroidery work. We deal in Cap/Hat, T-shirts, Front and
+                Left Chest, Sleeve, Jacket Back, 3D Puff, 3D Raised, Flat,
+                Towel, small letters, Applique and Patch.
               </Typography>
             </Grid>
           </Grid>
@@ -92,35 +136,26 @@ const Footer = () => {
           <Grid
             container
             direction="column"
-            alignItems="center"
-            columnSpacing={{ sm: 4 }}
+            alignItems="flex-start"
+            justifyContent="flex-start"
+            alignContent="center"
+            columnSpacing={{ sm: 1 }}
           >
             <Grid item>
               <Typography
                 variant="h2"
-                sx={{ color: "#fff", textTransform: "uppercase" }}
+                sx={{
+                  color: "#fff",
+                  textTransform: "uppercase",
+                }}
+                classes={{ root: classes.serviceHeading }}
               >
                 Our Services
               </Typography>
             </Grid>
-            <Grid item>
-              <Grid
-                container
-                justifyContent="flex-start"
-                classes={{ root: classes.servicePoint }}
-              >
-                <Grid item>
-                  <ChevronRightIcon
-                    sx={{ color: "#fff", fontWeight: "bold" }}
-                  />
-                </Grid>
-                <Grid item>
-                  <Typography variant="h3" sx={{ color: "#fff" }}>
-                    Embroidery Digitizing
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
+            {servicesRoutes.map((service) => (
+              <ServiceBullets text={service.label} link={service.link} />
+            ))}
           </Grid>
         </Grid>
         <Grid item md={4}>
@@ -129,6 +164,7 @@ const Footer = () => {
             direction="column"
             justifyContent="flex-start"
             alignItems="center"
+            alignContent="center"
             spacing={2}
           >
             <Grid item>
@@ -150,12 +186,12 @@ const Footer = () => {
                 variant="h1"
                 sx={{ color: "#fff", fontSize: "3.5rem" }}
               >
-                50%
+                100%
               </Typography>
             </Grid>
             <Grid item>
               <Typography variant="h2" sx={{ color: "#fff" }}>
-                Off Your First Order
+                Off at Your First Order
               </Typography>
             </Grid>
           </Grid>
@@ -191,7 +227,7 @@ const Footer = () => {
         </Grid>
         <Grid item>
           <Typography variant="body2" sx={{ color: "#fff" }}>
-            All Rights Reserved © 2022 EMB Digitized
+            All Rights Reserved © 2022 EMBDigitized
           </Typography>
         </Grid>
       </Grid>

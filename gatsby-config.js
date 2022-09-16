@@ -8,7 +8,13 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Roboto:n6,n5,n4,n3:latin", "Lato", "Poppins", "Rubik"],
+          families: [
+            "Roboto:n6,n5,n4,n3:latin",
+            "Lato",
+            "Poppins",
+            "Rubik",
+            "Anton",
+          ],
         },
       },
     },

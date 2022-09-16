@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <Layout>
       <ContactInfo />
-      <ContactForm />
+      {/* <ContactForm /> */}
     </Layout>
   );
 };

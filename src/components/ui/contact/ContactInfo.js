@@ -8,34 +8,35 @@ import theme from "../theme";
 import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import ContactForm from "./ContactForm";
 
 const useStyles = makeStyles((theme) => ({
   topContainerLeft: {
     [theme.breakpoints.up("md")]: {
-      width: "50%",
+      width: "40%",
     },
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },
     display: "inline-block",
-    height: "200px",
-    backgroundColor: "#FAFAFA",
+    height: "100%",
+    // backgroundColor: "#FAFAFA",
   },
   topContainerRight: {
     [theme.breakpoints.up("md")]: {
-      width: "50%",
+      width: "60%",
     },
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },
     display: "inline-block",
-    height: "200px",
+    height: "100%",
     backgroundColor: "#F4F4F4",
   },
   emailContainer: {
     [theme.breakpoints.up("md")]: {
       justifyContent: "flex-start",
-      alignItems: "flex-end",
+      alignItems: "flex-start",
     },
     [theme.breakpoints.down("md")]: {
       justifyContent: "center",
@@ -91,7 +92,11 @@ const ContactInfo = () => {
             <Grid container sx={{ padding: "" }}>
               <Grid item>
                 <EmailIcon
-                  sx={{ color: theme.palette.primary.main, padding: "0 10px" }}
+                  sx={{
+                    color: theme.palette.primary.main,
+                    padding: "0 10px",
+                    paddingBottom: "30px",
+                  }}
                 />
               </Grid>
               <Grid item>
@@ -101,15 +106,6 @@ const ContactInfo = () => {
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </div>
-      <div className={classes.topContainerRight}>
-        <Grid
-          container
-          direction="column"
-          classes={{ root: classes.phoneContainer }}
-          sx={{ padding: "20px" }}
-        >
           <Grid item>
             <Typography
               variant="h3"
@@ -153,6 +149,15 @@ const ContactInfo = () => {
             </Grid>
           </Grid>
         </Grid>
+      </div>
+      <div className={classes.topContainerRight}>
+        <Grid
+          container
+          direction="column"
+          classes={{ root: classes.phoneContainer }}
+          sx={{ padding: "20px" }}
+        ></Grid>
+        <ContactForm />
       </div>
     </>
   );

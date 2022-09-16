@@ -19,6 +19,7 @@ import logo from "../../images/logo-resize.png";
 import { Link } from "gatsby";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Popover from "@mui/material/Popover";
+import Divider from "@mui/material/Divider";
 
 // icons
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -66,17 +67,17 @@ const routesMobile = [
     link: "/about",
   },
   {
-    name: "Embrodiery",
+    name: "Embroidery",
     link: "/embrodiery",
   },
   {
     name: "Patches",
     link: "/patches",
   },
-  {
-    name: "3D Puffs",
-    link: "/puffs",
-  },
+  // {
+  //   name: "3D Puffs",
+  //   link: "/puffs",
+  // },
   {
     name: "Portfolio",
     link: "/portfolio",
@@ -94,17 +95,17 @@ const routesMobile = [
 
 const serviceRoutes = [
   {
-    name: "Embrodiery",
+    name: "Embroidery",
     link: "/embrodiery",
   },
   {
     name: "Patches",
     link: "/patches",
   },
-  {
-    name: "3D Puffs",
-    link: "/puffs",
-  },
+  // {
+  //   name: "3D Puffs",
+  //   link: "/puffs",
+  // },
 ];
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -232,17 +233,22 @@ const HeaderTwo = () => {
         }}
       >
         {serviceRoutes.map((singleService) => (
-          <Tab
-            component={Link}
-            to={singleService.link}
-            label={singleService.name}
-            key={singleService.name}
-            sx={{
-              color: theme.palette.secondary.main,
-              ...theme.typography.body1,
-              textTransform: "capitalize",
-            }}
-          />
+          <Box>
+            <Tab
+              component={Link}
+              to={singleService.link}
+              label={singleService.name}
+              key={singleService.name}
+              sx={{
+                color: theme.palette.secondary.main,
+                ...theme.typography.body1,
+                textTransform: "capitalize",
+                alignItems: "flex-start",
+                opacity: 1,
+              }}
+            />
+            <Divider />
+          </Box>
         ))}
       </Tabs>
     </Popover>
@@ -333,17 +339,17 @@ const HeaderTwo = () => {
           >
             <Grid item>
               <IconSection text="555-555-555">
-                <PhoneIcon sx={{ color: theme.palette.primary.main }} />
+                <PhoneIcon sx={{ color: theme.palette.common.white }} />
               </IconSection>
             </Grid>
             <Grid item>
               <IconSection text="mail@example.com">
-                <EmailIcon sx={{ color: theme.palette.primary.main }} />
+                <EmailIcon sx={{ color: theme.palette.common.white }} />
               </IconSection>
             </Grid>
             <Grid item>
               <IconSection text="24/7 everyday">
-                <WatchLaterIcon sx={{ color: theme.palette.primary.main }} />
+                <WatchLaterIcon sx={{ color: theme.palette.common.white }} />
               </IconSection>
             </Grid>
           </Grid>
@@ -357,13 +363,13 @@ const HeaderTwo = () => {
             classes={{ root: classes.socialContainer }}
           >
             <Grid item>
-              <TwitterIcon sx={{ color: theme.palette.primary.main }} />
+              <TwitterIcon sx={{ color: theme.palette.common.white }} />
             </Grid>
             <Grid item>
-              <FacebookIcon sx={{ color: theme.palette.primary.main }} />
+              <FacebookIcon sx={{ color: theme.palette.common.white }} />
             </Grid>
             <Grid item>
-              <InstagramIcon sx={{ color: theme.palette.primary.main }} />
+              <InstagramIcon sx={{ color: theme.palette.common.white }} />
             </Grid>
           </Grid>
         </Grid>

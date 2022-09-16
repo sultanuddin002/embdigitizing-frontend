@@ -97,24 +97,24 @@ const HomeTestimonials = () => {
         <Grid container>
           <Grid item sx={{ padding: "0px 20px" }}>
             <TestimonialsCardSection
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac euismod. Cras porta libero ut velit vehicula,"
-              name="Jane Doe"
-              post="Cloths Seller"
+              content="I have hired many embroidery digitizing services in the past but after I worked with EMBDigitized, I was completely satisfied with the level of quality, timely delivery, and continuous revisions until the work was flawless. I would recommend them for the future as well."
+              name="Christopher Davis"
+              post="Cloths Merchant"
             />
           </Grid>
           <Grid item sx={{ padding: "0px 20px" }}>
             <TestimonialsCardSection
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac euismod. Cras porta libero ut velit vehicula,"
-              name="Jane Doe"
-              post="Cloths Seller"
+              content="I have an order which needs to be delivered in rush. They were able to complete it within a few hours and the quality was quite satisfying. I am happy with the level of excellence provided by EMBDigitized. Thanks."
+              name="Steven Wilson"
+              post="Fashion Designer"
               bgColor={theme.palette.secondary.main}
             />
           </Grid>
           <Grid item sx={{ padding: "0px 20px" }}>
             <TestimonialsCardSection
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac euismod. Cras porta libero ut velit vehicula,"
-              name="Jane Doe"
-              post="Cloths Seller"
+              content="I wanted to have a long-term partnership with an embroidery digitizing service as I have several orders to be designed promptly. I have tried EMBDigitized but have been working with them for quite some time because of the professionalism they have shown. Recommended."
+              name="Brian Smith"
+              post="Brand Owner"
             />
           </Grid>
         </Grid>

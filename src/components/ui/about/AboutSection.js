@@ -10,6 +10,9 @@ import Container from "@mui/material/Container";
 import pen from "../../../images/pen.svg";
 import patch from "../../../images/patch.svg";
 import pc from "../../../images/pc.svg";
+import money from "../../../images/money.svg";
+import quality from "../../../images/quality.svg";
+import support from "../../../images/support.svg";
 
 // image
 import bannerImg from "../../../images/slider-1.jpg";
@@ -44,7 +47,16 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     [theme.breakpoints.up("md")]: {
-      width: "400px",
+      width: "800px",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+      padding: "10px 30px",
+    },
+  },
+  iconContainer: {
+    [theme.breakpoints.up("md")]: {
+      width: "300px",
     },
     [theme.breakpoints.down("md")]: {
       width: "100%",
@@ -79,7 +91,7 @@ function IconSection(props) {
 function DetailColumn(props) {
   const classes = useStyles();
   return (
-    <Grid item classes={{ root: classes.mainContainer }}>
+    <Grid item classes={{ root: classes.iconContainer }}>
       <Grid
         container="column"
         justifyContent="space-evenly"
@@ -110,7 +122,41 @@ function DetailColumn(props) {
   );
 }
 
-const AboutSection = () => {
+const iconSection = (
+  <>
+    <Grid item>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="flex-start"
+        rowSpacing={{ md: 4, sm: 4 }}
+        // columnSpacing={{ md: 12 }}
+        sx={{ padding: "30px 0 0px 0" }}
+      >
+        <DetailColumn image={patch} iconText="Skilled and Experience" />
+        <DetailColumn image={pen} iconText="Proficient Digitizer" />
+        <DetailColumn image={pc} iconText="Unrestricted Revisions" />
+      </Grid>
+    </Grid>
+    <Grid item>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="flex-start"
+        rowSpacing={{ md: 4, sm: 4 }}
+        // columnSpacing={{ md: 12 }}
+      >
+        <DetailColumn image={money} iconText="100% Money-Back" />
+        <DetailColumn image={quality} iconText="Quality Work" />
+        <DetailColumn image={support} iconText="24/7 online Support" />
+      </Grid>
+    </Grid>
+  </>
+);
+
+const AboutSection = (props) => {
   const classes = useStyles();
   return (
     <Grid
@@ -118,6 +164,7 @@ const AboutSection = () => {
       direction="column"
       justifyContent="flex-start"
       alignItems="center"
+      sx={{ paddingBottom: "30px" }}
     >
       {/* Banner image */}
       <Grid item classes={{ root: classes.bannerSection }}>
@@ -126,7 +173,6 @@ const AboutSection = () => {
           maxWidth="xl"
         ></Container>
       </Grid>
-
       {/* Heading and sub heading */}
       <Grid item>
         <Typography
@@ -138,10 +184,10 @@ const AboutSection = () => {
             color: "#000",
           }}
         >
-          about us
+          {props.title}
         </Typography>
       </Grid>
-      <Grid item>
+      {/* <Grid item>
         <Typography
           variant="h2"
           sx={{
@@ -155,123 +201,31 @@ const AboutSection = () => {
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
-      </Grid>
-
+      </Grid> */}
       {/* First text section */}
       <Grid item>
         <Grid
           container
-          columnSpacing={{ md: 5 }}
+          direction="column"
+          // columnSpacing={{ md: 5 }}
           rowSpacing={{ md: 3 }}
           justifyContent="space-evenly"
           alignItems="flex-start"
         >
           <Grid item classes={{ root: classes.mainContainer }}>
-            <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-              auctor ligula. Proin nisi ligula, luctus quis nisl vitae, aliquet
-              bibendum ante. Nam viverra pulvinar velit ac euismod. Cras porta
-              libero ut velit vehicula, in maximus magna blandit. Proin molestie
-              facilisis eros, a pellentesque ipsum pulvinar nec. Maecenas
-              rhoncus risus sed dictum pulvinar.
-            </Typography>
+            <Typography variant="body2">{props.textOne}</Typography>
           </Grid>
           <Grid item classes={{ root: classes.mainContainer }}>
-            <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-              auctor ligula. Proin nisi ligula, luctus quis nisl vitae, aliquet
-              bibendum ante. Nam viverra pulvinar velit ac euismod. Cras porta
-              libero ut velit vehicula, in maximus magna blandit. Proin molestie
-              facilisis eros, a pellentesque ipsum pulvinar nec. Maecenas
-              rhoncus risus sed dictum pulvinar.
-            </Typography>
+            <Typography variant="body2">{props.textTwo}</Typography>
           </Grid>
         </Grid>
       </Grid>
       {/* Single about image */}
-      <Grid item sx={{ padding: "30px 0", textAlign: "center" }}>
+      {/* <Grid item sx={{ padding: "30px 0", textAlign: "center" }}>
         <img src={aboutImage} className={classes.imageContainer} />
-      </Grid>
-
+      </Grid> */}
       {/* icon section */}
-      <Grid item>
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          rowSpacing={{ md: 4, sm: 4 }}
-          // columnSpacing={{ md: 12 }}
-          sx={{ padding: "10px 0 30px 0" }}
-        >
-          <DetailColumn
-            image={patch}
-            iconText="Embroidery Digitizers"
-            textOne="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-            textTwo="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-            textThree="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-          />
-          <DetailColumn
-            image={pen}
-            iconText="experienced designers"
-            textOne="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-            textTwo="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-            textThree="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-          />
-          <DetailColumn
-            image={pc}
-            iconText="Technology specialist"
-            textOne="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-            textTwo="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-            textThree="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean at auctor ligula. Proin nisi ligula, luctus quis nisl
-          vitae, aliquet bibendum ante. Nam viverra pulvinar velit ac
-          euismod. Cras porta libero ut velit vehicula, in maximus magna
-          blandit. Proin molestie facilisis eros, a pellentesque ipsum
-          pulvinar nec. Maecenas rhoncus risus sed dictum pulvinar."
-          />
-        </Grid>
-      </Grid>
+      {props.showIcons ? iconSection : ""}
     </Grid>
   );
 };
