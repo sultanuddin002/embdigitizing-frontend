@@ -1,8 +1,8 @@
-import imgOne from "../../../images/client-3.JPG";
-import imgTwo from "../../../images/client-4.JPG";
-import imgThree from "../../../images/client-5.JPG";
-import imgFour from "../../../images/client-6.JPG";
-import imgFive from "../../../images/client-7.JPG";
+import imgOne from "../../../images/client-3.jpg";
+import imgTwo from "../../../images/client-4.jpg";
+import imgThree from "../../../images/client-5.jpg";
+import imgFour from "../../../images/client-6.jpg";
+import imgFive from "../../../images/client-7.jpg";
 import imgSix from "../../../images/client-8.jpg";
 
 export const photos = [

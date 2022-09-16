@@ -12,7 +12,7 @@ import { makeStyles } from "@mui/styles";
 // images
 import serviceOneImg from "../../../images/home-service-1.jpg";
 import serviceTwoImg from "../../../images/home-service-2.jpg";
-import serviceThreeImg from "../../../images/client-4.JPG";
+import serviceThreeImg from "../../../images/client-4.jpg";
 import serviceFourImg from "../../../images/client-1.jpg";
 
 const useStyles = makeStyles((theme) => ({
