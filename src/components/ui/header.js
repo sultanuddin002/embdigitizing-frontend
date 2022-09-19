@@ -15,11 +15,12 @@ import Tab from "@mui/material/Tab";
 import Grid from "@mui/material/Grid";
 import theme from "./theme";
 import { makeStyles } from "@mui/styles";
-import logo from "../../images/logo-resize.png";
+import logo from "../../images/logo-increase-2.png";
 import { Link } from "gatsby";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Popover from "@mui/material/Popover";
 import Divider from "@mui/material/Divider";
+import IconSection from "./IconSection";
 
 // icons
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -74,10 +75,16 @@ const routesMobile = [
     name: "Patches",
     link: "/patches",
   },
-  // {
-  //   name: "3D Puffs",
-  //   link: "/puffs",
-  // },
+
+  { name: "Cap/Hat", link: "/cap" },
+  {
+    name: "3D Puffs",
+    link: "/puffs",
+  },
+  { name: "Left Chest", link: "/leftchest" },
+  { name: "Jacket Back", link: "/jacket" },
+  { name: "Towel", link: "/towel" },
+  { name: "Applique", link: "/applique" },
   {
     name: "Portfolio",
     link: "/portfolio",
@@ -102,17 +109,22 @@ const serviceRoutes = [
     name: "Patches",
     link: "/patches",
   },
-  // {
-  //   name: "3D Puffs",
-  //   link: "/puffs",
-  // },
+  { name: "Cap/Hat", link: "/cap" },
+  {
+    name: "3D Puffs",
+    link: "/puffs",
+  },
+  { name: "Left Chest", link: "/leftchest" },
+  { name: "Jacket Back", link: "/jacket" },
+  { name: "Towel", link: "/towel" },
+  { name: "Applique", link: "/applique" },
 ];
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const useStyles = makeStyles((theme) => ({
   logo: {
-    // width: "10%",
+    // width: "100%",
   },
   socialContainer: {
     [theme.breakpoints.up("md")]: {
@@ -144,18 +156,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function IconSection(props) {
-  return (
-    <Grid container spacing={1} justifyContent="flex-start" alignItems="center">
-      <Grid item>{props.children}</Grid>
-      <Grid item>
-        <Typography variant="body2" sx={{ color: "#fff" }}>
-          {props.text}
-        </Typography>
-      </Grid>
-    </Grid>
-  );
-}
+// function IconSection(props) {
+//   return (
+//     <Grid container spacing={1} justifyContent="flex-start" alignItems="center">
+//       <Grid item>{props.children}</Grid>
+//       <Grid item>
+//         <Typography variant="body2" sx={{ color: "#fff" }}>
+//           {props.text}
+//         </Typography>
+//       </Grid>
+//     </Grid>
+//   );
+// }
 
 const activeIndex = () => {
   if (typeof window != "undefined") {
@@ -348,7 +360,7 @@ const HeaderTwo = () => {
               </IconSection>
             </Grid>
             <Grid item>
-              <IconSection text="24/7 everyday">
+              <IconSection text="24/7 support">
                 <WatchLaterIcon sx={{ color: theme.palette.common.white }} />
               </IconSection>
             </Grid>

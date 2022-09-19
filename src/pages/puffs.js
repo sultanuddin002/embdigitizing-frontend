@@ -2,6 +2,7 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import AboutSection from "../components/ui/about/AboutSection";
 import Layout from "../components/ui/layout";
+import bannerImg from "../images/embroidery-banner-2.jpg";
 
 const PuffServices = () => {
   return (
@@ -20,6 +21,7 @@ const PuffServices = () => {
         libero ut velit vehicula, in maximus magna blandit. Proin molestie
         facilisis eros, a pellentesque ipsum pulvinar nec. Maecenas
         rhoncus risus sed dictum pulvinar."
+        backgroundImg={bannerImg}
         showIcons={false}
       />
     </Layout>

@@ -20,7 +20,7 @@ import aboutImage from "../../../images/about-image.jpg";
 
 const useStyles = makeStyles((theme) => ({
   bannerSection: {
-    backgroundImage: `url(${bannerImg})`,
+    // backgroundImage: `url(${bannerImg})`,
     height: "300px",
     display: "block",
     width: "100%",
@@ -167,7 +167,13 @@ const AboutSection = (props) => {
       sx={{ paddingBottom: "30px" }}
     >
       {/* Banner image */}
-      <Grid item classes={{ root: classes.bannerSection }}>
+      <Grid
+        item
+        classes={{ root: classes.bannerSection }}
+        sx={{
+          backgroundImage: `url(${props.backgroundImg})`,
+        }}
+      >
         <Container
           classes={{ root: classes.innerGrid }}
           maxWidth="xl"
@@ -217,6 +223,9 @@ const AboutSection = (props) => {
           </Grid>
           <Grid item classes={{ root: classes.mainContainer }}>
             <Typography variant="body2">{props.textTwo}</Typography>
+          </Grid>
+          <Grid item classes={{ root: classes.mainContainer }}>
+            <Typography variant="body2">{props.textThree}</Typography>
           </Grid>
         </Grid>
       </Grid>

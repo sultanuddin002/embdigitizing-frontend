@@ -2,6 +2,7 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
+import Container from "@mui/material/Container";
 import theme from "../theme";
 
 // icon
@@ -10,7 +11,24 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import ContactForm from "./ContactForm";
 
+// image
+import paymentImg from "../../../images/contact-us-2.jpg";
+
 const useStyles = makeStyles((theme) => ({
+  bannerSection: {
+    backgroundImage: `url(${paymentImg})`,
+    height: "300px",
+    display: "block",
+    width: "100%",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    backgroundSize: "cover",
+  },
+  innerGrid: {
+    height: "100%",
+    width: "100%",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
   topContainerLeft: {
     [theme.breakpoints.up("md")]: {
       width: "40%",
@@ -59,6 +77,21 @@ const ContactInfo = () => {
   const classes = useStyles();
   return (
     <>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        // sx={{ paddingBottom: "60px" }}
+      >
+        {/* Banner image */}
+        <Grid item classes={{ root: classes.bannerSection }}>
+          <Container
+            classes={{ root: classes.innerGrid }}
+            maxWidth="xl"
+          ></Container>
+        </Grid>
+      </Grid>
       <div className={classes.topContainerLeft}>
         <Grid
           container

@@ -14,6 +14,9 @@ import serviceOneImg from "../../../images/home-service-1.jpg";
 import serviceTwoImg from "../../../images/home-service-2.jpg";
 import serviceThreeImg from "../../../images/client-4.jpg";
 import serviceFourImg from "../../../images/client-1.jpg";
+import serviceClientOneImg from "../../../images/home-patches.jpg";
+import serviceClientTwoImg from "../../../images/get-quote.jpg";
+import { Link } from "gatsby";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -28,7 +31,13 @@ function CardServiceSection(props) {
   const classes = useStyles();
   return (
     <Grid item sx={{ padding: "20px 40px" }}>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card
+        sx={{
+          maxWidth: 345,
+          height: "660px",
+          boxShadow: "0px 0px 3px 4px rgba(166,166,166,0.76)",
+        }}
+      >
         <CardMedia
           component="img"
           height="300"
@@ -53,6 +62,8 @@ function CardServiceSection(props) {
           <Button
             // className="serviceButton"
             classes={{ root: classes.button }}
+            component={Link}
+            to={props.link}
             sx={{
               ...theme.typography.body1,
               color: "#fff",
@@ -82,22 +93,25 @@ const HomeServices = () => {
       <CardServiceSection
         image={serviceThreeImg}
         title="Embroidery Digitizing"
-        description="Are you looking for embroidery digitizing services with someone who has more than 20 years of experience in working with all types of stitch types? Simply contact EMBDigitizing where you will get the best quality guarantee."
+        description="Are you looking for embroidery digitizing services with someone who has more than 22 years of experience of embroidery digitizing simply contact EMBdigitized where you will get the best quality with fastest turnaround time in the market."
         buttonTitle="Learn More"
+        link="/embrodiery"
       />
 
       <CardServiceSection
-        image={serviceFourImg}
-        title="Patches Digitizing"
-        description="The use of Patches for T-shirts, left pocket, bags, and caps are getting in demand every passing day. If you are looking for quality and fast turn-around time for your patches digitizing solution, contact us and we’ll provide our amazing embroidery digitizing services for amazing patches designing. "
+        image={serviceClientOneImg}
+        title="Custom Embroidery Patches"
+        description="At EMBdigitized Custom Embroidery Patches we make it easy to create, order, and have your custom patches in no time at all. Our passion is bringing the benefits of on-demand manufacturing to everyone that is why we offer rapid turnaround times, fair pricing, and low minimum quantity orders for every custom patch project you create with us. "
         buttonTitle="Learn More"
+        link="/patches"
       />
 
       <CardServiceSection
-        image={serviceTwoImg}
+        image={serviceClientTwoImg}
         title="Get A Free Quote"
-        description="Do you have a design with you and want to convert it into an embroidery digitizing format for your required fabric type? Simply contact us and provide the details about your work. We will offer you a comprehensive quote including cost, turnaround time, and every query that you have regarding the work."
+        description="Do you have a design with you and want to convert it into an embroidery digitizing format for your required fabric type? Simply contact us and provide the details about your work. We will offer you a comprehensive quote including cost and every query that you have regarding the work."
         buttonTitle="Quote Now"
+        link="/contact"
       />
     </Grid>
   );

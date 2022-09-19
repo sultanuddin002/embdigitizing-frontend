@@ -169,10 +169,10 @@ const HomeSlider = () => {
       modules={[Navigation, Autoplay]}
       slidesPerView={1}
       centeredSlides={true}
-      // autoplay={{
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      // }}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
       className={classes.swiper}
@@ -182,7 +182,7 @@ const HomeSlider = () => {
           <SliderContent
             title="100% Off at First Order"
             subTitle="Sign up and get your first order free of charge"
-            description="We are providing 100% off for limited time to our new customers on their first order. Contact us to find more detail"
+            description="We are providing 100% off to our new customers on their first order. Contact us to find more detail"
             buttonText="Order Now"
           />
         </Paper>

@@ -59,7 +59,13 @@ const useStyles = makeStyles((theme) => ({
 function AboutCardSection(props) {
   return (
     <Grid item sx={{ padding: "20px 20px" }}>
-      <Card sx={{ maxWidth: 250 }}>
+      <Card
+        sx={{
+          maxWidth: 250,
+          height: "270px",
+          boxShadow: "0px 0px 3px 4px rgba(166,166,166,0.76)",
+        }}
+      >
         <CardContent>
           <Typography
             variant="h3"
@@ -136,24 +142,24 @@ const HomeAbout = () => {
           <Grid item>
             <Grid container justifyContent="center" alignItems="center">
               <AboutCardSection
-                title="Logo embroidery digitizing"
-                description="Proficient in digitizing every type of logo for t-shirt, caps/hats, jacket back, front and left chest."
+                title="Embroidery Digitizing"
+                description="Digitizing is just like any other digitizing process, it converts the image of a logo into a specific command which the embroidery machine can read and interpret in a specific streamlined and automated fashion. "
               />
               <AboutCardSection
-                title="Unlimited Revisions"
-                description="We’ll make sure that the final product exceeds your expectation in terms of quality, fine work, and best outcome."
+                title="Quality is our Priority"
+                description="We always give preference to quality with the super fast turnaround time and we make sure that we fulfil all the requirements that were demanded by the customer at the time of order."
               />
             </Grid>
           </Grid>
           <Grid item>
             <Grid container justifyContent="center" alignItems="center">
               <AboutCardSection
-                title="Support fabric types"
-                description="We offer embroidery digitizing for every fabric and stitch type weather its cotton, linen, denim, canvas, wool, Burlap, and more."
+                title="Affordable Pricing"
+                description="We are providing the best digitizing services at the most affordable pricing that you will not get from anywhere else."
               />
               <AboutCardSection
-                title="Provide a scan of sew-out"
-                description="If you want to check how well the design going to look on the actual stitch form, we can provide a scan of the sew-out design so that you can see quality first hand."
+                title="Fabric Supportive Digitizing"
+                description="We do embroidery digitizing according to your required fabric whether it's Pique, Polyester, Twill, Cotton, Denim, Towel, Canvas, Linen, Wool, and more."
               />
             </Grid>
           </Grid>
@@ -179,9 +185,9 @@ const HomeAbout = () => {
               sx={{ padding: "8px 0" }}
               classes={{ root: classes.subTitleSection }}
             >
-              At EMBDigitized, we have the means and techniques to produce
-              high-quality embroidery digitizing service that is cost-effective
-              and with a low turnaround time.
+              At EMBdigitized, we have the means and techniques to produce
+              high-quality embroidery digitizing services that are
+              cost-effective and with a fastest turnaround time.
             </Typography>
           </Grid>
           <Grid item>
@@ -190,12 +196,12 @@ const HomeAbout = () => {
               sx={{ padding: "0 8px 18px 0px" }}
               classes={{ root: classes.descriptionSection }}
             >
-              With over 20 years of experience, and working with various
-              international brands, we can fulfill your requirement most
-              professionally. Whether you are looking for a full-time partner to
-              produce frequent embroidery digitizing services or just want a
-              one-time service, we will make sure that you get an amazing
-              experience while working with us.
+              With over 22 years of experience, and working with various
+              international brands, embroidery companies we can fulfill your
+              requirements most professionally. If you are looking for a
+              full-time partner to get frequent embroidery digitizing services
+              then you have come to the right place. We will make sure that you
+              get an amazing experience and quality while working with us.
             </Typography>
           </Grid>
           <FeatureSection text="Fastest Delivery Time" />

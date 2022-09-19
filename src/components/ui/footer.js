@@ -3,16 +3,34 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import theme from "./theme";
 import { makeStyles } from "@mui/styles";
-import logo from "../../images/logo-resize.png";
+// import logo from "../../images/logo-resize.png";
+import logo from "../../images/logo-resized-2.jpg";
 import Button from "@mui/material/Button";
 import { Link } from "gatsby";
+import IconSection from "./IconSection";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 // icons
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+
+// images
+import amercianExpress from "../../images/americanexpress.png";
+import cirrus from "../../images/cirrus.png";
+import dinersClub from "../../images/dinersclub.png";
+import discover from "../../images/discover.png";
+import maestro from "../../images/maestro.png";
+import masterCard from "../../images/mastercard.png";
+import paypal from "../../images/paypal.png";
+import visa from "../../images/visa02.png";
+import wirecard from "../../images/wirecard.png";
+import worldpay from "../../images/worldpay.png";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
     backgroundColor: "#fff",
+    borderRadius: "100px",
   },
   button: {
     "&:hover": {
@@ -42,8 +60,32 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "space-around",
     },
     [theme.breakpoints.down("md")]: {
-      justifyContent: "center",
+      justifyContent: "flex-start",
     },
+  },
+  contactContainer: {
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "flex-start",
+      alignItems: "center",
+    },
+    [theme.breakpoints.down("md")]: {
+      justifyContent: "flex-start",
+      direction: "column",
+      spacing: 1,
+    },
+  },
+  serviceContainer: {
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    [theme.breakpoints.up("md")]: {
+      alignContent: "center",
+    },
+    [theme.breakpoints.down("md")]: {
+      alignContent: "flex-start",
+    },
+  },
+  paymentImg: {
+    padding: "0 10px",
   },
 }));
 
@@ -66,13 +108,59 @@ const servicesRoutes = [
     link: "/embrodiery",
   },
   {
-    label: "Patches Digitizing",
+    label: "Cap/Hat Digitizing",
+    link: "/cap",
+  },
+  {
+    label: "3D Puff Digitizing",
+    link: "/puffs",
+  },
+  {
+    label: "Jacket Back Digitizing",
+    link: "/jacket",
+  },
+  {
+    label: "Polo Shirts Digitizing",
+  },
+  {
+    label: "Towel Digitizing",
+    link: "/towel",
+  },
+  {
+    label: "Applique Digitizing",
+    link: "/towel",
+  },
+  {
+    label: "Custom Patch Digitizing",
     link: "/patches",
   },
 ];
 
+const paymentArray = [
+  {
+    img: amercianExpress,
+    alt: "American Express",
+  },
+  {
+    img: cirrus,
+    alt: "cirrus",
+  },
+  {
+    img: dinersClub,
+    alt: "Diners Club",
+  },
+  { img: discover, alt: "Discover" },
+  { img: maestro, alt: "Maestro" },
+  { img: masterCard, alt: "Master Card" },
+  { img: paypal, alt: "PayPal" },
+  { img: visa, alt: "Visa" },
+  { img: wirecard, alt: "Wirecard" },
+  { img: worldpay, alt: "WorldPay" },
+];
+
 function ServiceBullets(props) {
   const classes = useStyles();
+
   return (
     <Grid item>
       <Grid
@@ -98,22 +186,31 @@ function ServiceBullets(props) {
   );
 }
 
+function PaymentSection(props) {
+  const classes = useStyles();
+  return <img src={props.img} alt={props.alt} className={classes.paymentImg} />;
+}
+
 const Footer = () => {
   const classes = useStyles();
+  // media query
+  const matchesMD = useMediaQuery(theme.breakpoints.up("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("md"));
   // Main Grid
   return (
     <div className={classes.container}>
       <Grid
         container
         rowSpacing={{ xs: 3, md: 0 }}
-        alignItems="center"
+        alignItems="flex-start"
+        // justifyContent="flex-start"
         sx={{
           backgroundColor: theme.palette.secondary.main,
           padding: "40px",
         }}
         classes={{ root: classes.mainContainer }}
       >
-        <Grid item md={4}>
+        <Grid item md={3} sm={12}>
           <Grid container direction="column" alignItems="flex-start">
             <Grid item>
               <img src={logo} alt="logo item" className={classes.logo} />
@@ -132,14 +229,12 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={3} sm={12}>
           <Grid
             container
             direction="column"
-            alignItems="flex-start"
-            justifyContent="flex-start"
-            alignContent="center"
             columnSpacing={{ sm: 1 }}
+            classes={{ root: classes.serviceContainer }}
           >
             <Grid item>
               <Typography
@@ -158,13 +253,11 @@ const Footer = () => {
             ))}
           </Grid>
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={3} sm={12}>
           <Grid
             container
             direction="column"
-            justifyContent="flex-start"
-            alignItems="center"
-            alignContent="center"
+            classes={{ root: classes.serviceContainer }}
             spacing={2}
           >
             <Grid item>
@@ -193,6 +286,51 @@ const Footer = () => {
               <Typography variant="h2" sx={{ color: "#fff" }}>
                 Off at Your First Order
               </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item md={3} sm={12}>
+          <Grid
+            container
+            direction="column"
+            alignItems="flex-start"
+            justifyContent="flex-start"
+            alignContent="center"
+            columnSpacing={{ sm: 1 }}
+          >
+            <Grid item>
+              <Typography
+                variant="h2"
+                sx={{
+                  color: "#fff",
+                  textTransform: "uppercase",
+                }}
+                classes={{ root: classes.serviceHeading }}
+              >
+                Contact Us
+              </Typography>
+            </Grid>
+            <Grid
+              container
+              columnSpacing={{ md: 4, xs: 1 }}
+              sx={{ paddingLeft: "30px" }}
+              classes={{ root: classes.contactContainer }}
+            >
+              <Grid item>
+                <IconSection text="555-555-555">
+                  <PhoneIcon sx={{ color: theme.palette.common.white }} />
+                </IconSection>
+              </Grid>
+              <Grid item>
+                <IconSection text="mail@example.com">
+                  <EmailIcon sx={{ color: theme.palette.common.white }} />
+                </IconSection>
+              </Grid>
+            </Grid>
+            <Grid item sx={{ pt: 2 }}>
+              {paymentArray.map((payment) => (
+                <PaymentSection img={payment.img} alt={payment.alt} />
+              ))}
             </Grid>
           </Grid>
         </Grid>
