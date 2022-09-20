@@ -4,11 +4,13 @@ import Layout from "../components/ui/layout";
 import PaymentContent from "../components/ui/payment/PaymentContent";
 import PaymentFaq from "../components/ui/payment/PaymentFaq";
 import PricingContent from "../components/ui/payment/PricingContent";
+import PricingUpdate from "../components/ui/payment/PricingUpdate";
 
 const Pricing = () => {
   return (
     <Layout>
-      <PricingContent />
+      {/* <PricingContent /> */}
+      <PricingUpdate />
       {/* <PaymentFaq /> */}
     </Layout>
   );

@@ -66,7 +66,8 @@ function PricingCardOne(props) {
           padding: "10px 30px",
           borderRadius: "20px",
           position: "absolute",
-          left: "53%",
+          // left: "53%",
+          left: props.left,
           // top: "92%",
           marginTop: "-20px",
         }}
@@ -89,11 +90,19 @@ function PricingCardOne(props) {
           borderRadius: "40px 0px 40px 0px",
         }}
       >
-        <CardContent sx={{ padding: 0 }}>
+        <CardContent
+          sx={{
+            padding: 0,
+            // background:
+            //   "linear-gradient(167deg, rgba(255,255,255,1) 78%, rgba(239,170,233,1) 100%)",
+            background: `linear-gradient(167deg, ${props.bg1} 78%, ${props.bg2} 100%)`,
+          }}
+        >
           <Box
             sx={{
-              background:
-                "linear-gradient(156deg, rgba(130,40,164,1) 30%, rgba(225,106,134,1) 100%)",
+              // background:
+              //   "linear-gradient(156deg, rgba(130,40,164,1) 30%, rgba(225,106,134,1) 100%)",
+              background: `linear-gradient(156deg, ${props.bg3} 30%, ${props.bg4} 100%)`,
               padding: "20px 10px",
               borderRadius: "0 0 30px 0px",
             }}
@@ -267,8 +276,43 @@ const PricingUpdate = () => {
               subTitle="Best for starting businesses"
               items="For caps and left chests"
               price="$15"
+              // left="25%"
               stitches="10,000 stitches"
               features={[...basicFeatures, ...similarDetails]}
+              bg1="rgba(255,255,255,1)"
+              bg2="rgba(239,170,233,1)"
+              bg3="rgba(130,40,164,1)"
+              bg4="rgba(225,106,134,1)"
+            />
+          </Grid>
+          <Grid item>
+            <PricingCardOne
+              title="standard"
+              subTitle="Best for medium businesses"
+              items="For caps and left chests"
+              price="$25"
+              stitches="20,000 stitches"
+              // left="45%"
+              features={[...standardFeatures, ...similarDetails]}
+              bg1="rgba(255,255,255,1)"
+              bg2="rgba(186,245,243,1)"
+              bg3="rgba(71,190,184,1)"
+              bg4="rgba(106,60,231,1)"
+            />
+          </Grid>
+          <Grid item>
+            <PricingCardOne
+              title="Professional"
+              subTitle="Best for large enterprises"
+              items="For jacket backs"
+              price="$40"
+              stitches="50,000 stitches"
+              // left="73%"
+              features={[...premiumFeatures, ...similarDetails]}
+              bg1="rgba(255,255,255,1)"
+              bg2="rgba(244,182,183,1)"
+              bg3="rgba(199,30,71,1)"
+              bg4="rgba(250,141,82,1)"
             />
           </Grid>
         </Grid>
