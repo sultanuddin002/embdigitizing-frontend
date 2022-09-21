@@ -26,6 +26,7 @@ import paypal from "../../images/paypal.png";
 import visa from "../../images/visa02.png";
 import wirecard from "../../images/wirecard.png";
 import worldpay from "../../images/worldpay.png";
+import paypalLarge from "../../images/pp-white-bg-3.png";
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -74,6 +75,7 @@ const useStyles = makeStyles((theme) => ({
       spacing: 1,
     },
   },
+
   serviceContainer: {
     alignItems: "flex-start",
     justifyContent: "flex-start",
@@ -84,8 +86,19 @@ const useStyles = makeStyles((theme) => ({
       alignContent: "flex-start",
     },
   },
+  signUpContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    [theme.breakpoints.up("md")]: {
+      alignContent: "center",
+    },
+    [theme.breakpoints.down("md")]: {
+      alignContent: "center",
+    },
+  },
   paymentImg: {
-    padding: "0 10px",
+    padding: "0 5px",
+    width: "40px",
   },
 }));
 
@@ -107,29 +120,29 @@ const servicesRoutes = [
     label: "Embroidery Digitizing",
     link: "/embrodiery",
   },
-  {
-    label: "Cap/Hat Digitizing",
-    link: "/cap",
-  },
-  {
-    label: "3D Puff Digitizing",
-    link: "/puffs",
-  },
-  {
-    label: "Jacket Back Digitizing",
-    link: "/jacket",
-  },
-  {
-    label: "Polo Shirts Digitizing",
-  },
-  {
-    label: "Towel Digitizing",
-    link: "/towel",
-  },
-  {
-    label: "Applique Digitizing",
-    link: "/towel",
-  },
+  // {
+  //   label: "Cap/Hat Digitizing",
+  //   link: "/cap",
+  // },
+  // {
+  //   label: "3D Puff Digitizing",
+  //   link: "/puffs",
+  // },
+  // {
+  //   label: "Jacket Back Digitizing",
+  //   link: "/jacket",
+  // },
+  // {
+  //   label: "Polo Shirts Digitizing",
+  // },
+  // {
+  //   label: "Towel Digitizing",
+  //   link: "/towel",
+  // },
+  // {
+  //   label: "Applique Digitizing",
+  //   link: "/towel",
+  // },
   {
     label: "Custom Patch Digitizing",
     link: "/patches",
@@ -220,11 +233,11 @@ const Footer = () => {
                 variant="body2"
                 sx={{ color: "#fff", paddingTop: "30px" }}
               >
-                EMBDigitized is an embroidery digitizing service with experience
-                working in all types of fabric, stitches, and designs needed for
-                your Embroidery work. We deal in Cap/Hat, T-shirts, Front and
-                Left Chest, Sleeve, Jacket Back, 3D Puff, 3D Raised, Flat,
-                Towel, small letters, Applique and Patch.
+                EMBdigitized has been working professionally since 2000. We are
+                a leading embroidery digitizing service provider in many
+                countries working in the embroidery industry with various
+                companies and individuals for quality and award winning
+                embroidery digitizing.
               </Typography>
             </Grid>
           </Grid>
@@ -257,7 +270,7 @@ const Footer = () => {
           <Grid
             container
             direction="column"
-            classes={{ root: classes.serviceContainer }}
+            classes={{ root: classes.signUpContainer }}
             spacing={2}
           >
             <Grid item>
@@ -331,6 +344,13 @@ const Footer = () => {
               {paymentArray.map((payment) => (
                 <PaymentSection img={payment.img} alt={payment.alt} />
               ))}
+            </Grid>
+            <Grid item>
+              <img
+                src={paypalLarge}
+                alt="Paypal Icon"
+                style={{ width: "200px" }}
+              />
             </Grid>
           </Grid>
         </Grid>

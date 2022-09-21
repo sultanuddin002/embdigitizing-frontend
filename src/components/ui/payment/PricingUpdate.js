@@ -17,6 +17,7 @@ import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
 // image
 import paymentImg from "../../../images/payment-image.jpg";
+import { Paper } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   bannerSection: {
@@ -52,23 +53,29 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#585252!important",
     },
   },
+  boxContainer: {
+    [theme.breakpoints.down("md")]: {
+      width: 450,
+    },
+  },
 }));
 
 function PricingCardOne(props) {
   const classes = useStyles();
   return (
-    <Box>
+    <Paper
+      sx={{ margin: "20px 0", borderRadius: "40px" }}
+      classes={{ root: classes.boxContainer }}
+    >
       <Button
         sx={{
-          backgroundColor: "#585252",
+          backgroundColor: "#000",
           color: "#fff",
           fontWeight: "bold",
           padding: "10px 30px",
           borderRadius: "20px",
           position: "absolute",
-          // left: "53%",
-          left: props.left,
-          // top: "92%",
+          marginLeft: props.left,
           marginTop: "-20px",
         }}
         classes={{ root: classes.button }}
@@ -94,15 +101,12 @@ function PricingCardOne(props) {
           sx={{
             padding: 0,
             // background:
-            //   "linear-gradient(167deg, rgba(255,255,255,1) 78%, rgba(239,170,233,1) 100%)",
             background: `linear-gradient(167deg, ${props.bg1} 78%, ${props.bg2} 100%)`,
           }}
         >
           <Box
             sx={{
-              // background:
-              //   "linear-gradient(156deg, rgba(130,40,164,1) 30%, rgba(225,106,134,1) 100%)",
-              background: `linear-gradient(156deg, ${props.bg3} 30%, ${props.bg4} 100%)`,
+              backgroundColor: props.bgHex,
               padding: "20px 10px",
               borderRadius: "0 0 30px 0px",
             }}
@@ -123,7 +127,7 @@ function PricingCardOne(props) {
                 mb: 1.5,
                 pt: 2,
                 textAlign: "center",
-                fontSize: "50px",
+                fontSize: "70px",
                 color: "#fff",
                 fontWeight: "bold",
               }}
@@ -195,7 +199,7 @@ function PricingCardOne(props) {
         <Button size="small">Learn More</Button>
       </CardActions> */}
       </Card>
-    </Box>
+    </Paper>
   );
 }
 
@@ -267,7 +271,7 @@ const PricingUpdate = () => {
           direction="row"
           justifyContent="center"
           alignItems="center"
-          columnSpacing={{ md: 3 }}
+          columnSpacing={{ md: 3, sm: 3 }}
           sx={{ padding: "20px 0" }}
         >
           <Grid item>
@@ -276,13 +280,14 @@ const PricingUpdate = () => {
               subTitle="Best for starting businesses"
               items="For caps and left chests"
               price="$15"
-              // left="25%"
+              left="191px"
               stitches="10,000 stitches"
               features={[...basicFeatures, ...similarDetails]}
               bg1="rgba(255,255,255,1)"
-              bg2="rgba(239,170,233,1)"
+              bg2="rgba(163,0,47,1)"
               bg3="rgba(130,40,164,1)"
               bg4="rgba(225,106,134,1)"
+              bgHex="#a3002f"
             />
           </Grid>
           <Grid item>
@@ -292,27 +297,29 @@ const PricingUpdate = () => {
               items="For caps and left chests"
               price="$25"
               stitches="20,000 stitches"
-              // left="45%"
+              left="147px"
               features={[...standardFeatures, ...similarDetails]}
               bg1="rgba(255,255,255,1)"
-              bg2="rgba(186,245,243,1)"
+              bg2="rgba(127,127,127,1)"
               bg3="rgba(71,190,184,1)"
               bg4="rgba(106,60,231,1)"
+              bgHex="#7f7f7f"
             />
           </Grid>
           <Grid item>
             <PricingCardOne
-              title="Professional"
+              title="Premium"
               subTitle="Best for large enterprises"
               items="For jacket backs"
               price="$40"
               stitches="50,000 stitches"
-              // left="73%"
+              left="271px"
               features={[...premiumFeatures, ...similarDetails]}
               bg1="rgba(255,255,255,1)"
-              bg2="rgba(244,182,183,1)"
+              bg2="rgba(12,38,87,1)"
               bg3="rgba(199,30,71,1)"
               bg4="rgba(250,141,82,1)"
+              bgHex="#0c2657"
             />
           </Grid>
         </Grid>

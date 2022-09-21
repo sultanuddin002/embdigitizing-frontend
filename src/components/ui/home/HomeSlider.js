@@ -27,7 +27,7 @@ const commonSlideStyles = {
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   backgroundPosition: "center center",
-  height: "100%",
+  height: "500px",
   display: "block",
   width: "100%",
 };
@@ -170,8 +170,9 @@ const HomeSlider = () => {
       slidesPerView={1}
       centeredSlides={true}
       autoplay={{
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       }}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}

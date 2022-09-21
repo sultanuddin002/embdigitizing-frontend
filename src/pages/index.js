@@ -8,6 +8,7 @@ import HomeSlider from "../components/ui/home/HomeSlider";
 import HomeTestimonials from "../components/ui/home/HomeTestimonials";
 import Layout from "../components/ui/layout";
 import theme from "../components/ui/theme";
+import Fade from "@mui/material/Fade";
 
 const IndexPage = () => {
   return (

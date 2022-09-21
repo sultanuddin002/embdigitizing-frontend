@@ -31,6 +31,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MenuIcon from "@mui/icons-material/Menu";
 
+// images
+import skype from "../../images/skype.svg";
+
 const routes = [
   {
     name: "Home",
@@ -72,19 +75,9 @@ const routesMobile = [
     link: "/embrodiery",
   },
   {
-    name: "Patches",
+    name: "Custom  Patches",
     link: "/patches",
   },
-
-  { name: "Cap/Hat", link: "/cap" },
-  {
-    name: "3D Puffs",
-    link: "/puffs",
-  },
-  { name: "Left Chest", link: "/leftchest" },
-  { name: "Jacket Back", link: "/jacket" },
-  { name: "Towel", link: "/towel" },
-  { name: "Applique", link: "/applique" },
   {
     name: "Portfolio",
     link: "/portfolio",
@@ -106,18 +99,9 @@ const serviceRoutes = [
     link: "/embrodiery",
   },
   {
-    name: "Patches",
+    name: "Custom Patches",
     link: "/patches",
   },
-  { name: "Cap/Hat", link: "/cap" },
-  {
-    name: "3D Puffs",
-    link: "/puffs",
-  },
-  { name: "Left Chest", link: "/leftchest" },
-  { name: "Jacket Back", link: "/jacket" },
-  { name: "Towel", link: "/towel" },
-  { name: "Applique", link: "/applique" },
 ];
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -141,11 +125,13 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       justifyContent: "flex-start",
       alignItems: "center",
+      paddingLeft: "50px",
     },
     [theme.breakpoints.down("md")]: {
-      justifyContent: "flex-start",
+      justifyContent: "center",
       direction: "column",
       spacing: 1,
+      // paddingLeft: "20px",
     },
   },
   coloredIndicator: {
@@ -156,18 +142,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// function IconSection(props) {
-//   return (
-//     <Grid container spacing={1} justifyContent="flex-start" alignItems="center">
-//       <Grid item>{props.children}</Grid>
-//       <Grid item>
-//         <Typography variant="body2" sx={{ color: "#fff" }}>
-//           {props.text}
-//         </Typography>
-//       </Grid>
-//     </Grid>
-//   );
-// }
 
 const activeIndex = () => {
   if (typeof window != "undefined") {
@@ -330,23 +304,30 @@ const HeaderTwo = () => {
     <>
       <Grid
         container
-        direction="column"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-      ></Grid>
-      <Grid
-        container
         justifyContent="space-around"
         alignItems="center"
         classes={{ root: classes.topbarSection }}
         sx={{ backgroundColor: theme.palette.secondary.main }}
       >
-        <Grid item md={9} xs={8}>
+        <Grid item md={5} xs={12}>
           <Grid
             container
-            columnSpacing={{ md: 4, xs: 1 }}
+            columnSpacing={{ md: 2, xs: 1 }}
             // justifyContent="flex-start"
-            sx={{ paddingLeft: "30px" }}
+            // sx={{ paddingLeft: "80px" }}
+            classes={{ root: classes.contactContainer }}
+          >
+            <Typography variant="body2" sx={{ color: "#fff" }}>
+              To giving embroidery services with a one click to everyone.
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid item md={5} xs={12}>
+          <Grid
+            container
+            direction="row"
+            columnSpacing={{ md: 3, xs: 1 }}
             classes={{ root: classes.contactContainer }}
           >
             <Grid item>
@@ -367,15 +348,25 @@ const HeaderTwo = () => {
           </Grid>
         </Grid>
 
-        <Grid item md={3} xs={4}>
+        <Grid item md={2} xs={12}>
           <Grid
             container
-            spacing={1}
-            sx={{ paddingRight: "30px" }}
-            classes={{ root: classes.socialContainer }}
+            direction="row"
+            columnSpacing={{ md: 1, xs: 1 }}
+            sx={{ paddingLeft: "30px" }}
+            classes={{ root: classes.contactContainer }}
           >
             <Grid item>
-              <TwitterIcon sx={{ color: theme.palette.common.white }} />
+              {/* <TwitterIcon sx={{ color: theme.palette.common.white }} /> */}
+              <img
+                src={skype}
+                alt="skype icon"
+                style={{
+                  width: "23px",
+                  filter:
+                    "invert(100%) sepia(0%) saturate(7500%) hue-rotate(155deg) brightness(104%) contrast(107%)",
+                }}
+              />
             </Grid>
             <Grid item>
               <FacebookIcon sx={{ color: theme.palette.common.white }} />
@@ -414,7 +405,6 @@ const HeaderTwo = () => {
             ) : (
               <Tabs
                 sx={{
-                  //   marginRight: "auto",
                   marginLeft: "auto",
                 }}
                 value={activeIndex()}

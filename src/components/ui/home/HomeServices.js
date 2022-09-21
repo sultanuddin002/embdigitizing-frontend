@@ -14,7 +14,7 @@ import serviceOneImg from "../../../images/home-service-1.jpg";
 import serviceTwoImg from "../../../images/home-service-2.jpg";
 import serviceThreeImg from "../../../images/client-4.jpg";
 import serviceFourImg from "../../../images/client-1.jpg";
-import serviceClientOneImg from "../../../images/home-patches.jpg";
+import serviceClientOneImg from "../../../images/home-patches-2.jpg";
 import serviceClientTwoImg from "../../../images/get-quote.jpg";
 import { Link } from "gatsby";
 
@@ -35,7 +35,8 @@ function CardServiceSection(props) {
         sx={{
           maxWidth: 345,
           height: "660px",
-          boxShadow: "0px 0px 3px 4px rgba(166,166,166,0.76)",
+          boxShadow: `0px 0px 3px 4px ${props.shades}`,
+          borderRadius: "50px 0 50px 0",
         }}
       >
         <CardMedia
@@ -44,7 +45,7 @@ function CardServiceSection(props) {
           image={props.image}
           alt="services image"
         />
-        <CardContent>
+        <CardContent sx={{ height: 250 }}>
           <Typography
             variant="h2"
             sx={{ textAlign: "center", fontWeight: 600 }}
@@ -94,24 +95,26 @@ const HomeServices = () => {
         image={serviceThreeImg}
         title="Embroidery Digitizing"
         description="Are you looking for embroidery digitizing services with someone who has more than 22 years of experience of embroidery digitizing simply contact EMBdigitized where you will get the best quality with fastest turnaround time in the market."
-        buttonTitle="Learn More"
-        link="/embrodiery"
+        buttonTitle="Order Now"
+        link="/contact"
+        shades="rgba(12,38,87,1)"
       />
 
       <CardServiceSection
         image={serviceClientOneImg}
         title="Custom Embroidery Patches"
         description="At EMBdigitized Custom Embroidery Patches we make it easy to create, order, and have your custom patches in no time at all. Our passion is bringing the benefits of on-demand manufacturing to everyone that is why we offer rapid turnaround times, fair pricing, and low minimum quantity orders for every custom patch project you create with us. "
-        buttonTitle="Learn More"
-        link="/patches"
+        buttonTitle="Order Now"
+        link="/contact"
+        shades="rgba(163,0,47,1)"
       />
-
       <CardServiceSection
         image={serviceClientTwoImg}
         title="Get A Free Quote"
         description="Do you have a design with you and want to convert it into an embroidery digitizing format for your required fabric type? Simply contact us and provide the details about your work. We will offer you a comprehensive quote including cost and every query that you have regarding the work."
         buttonTitle="Quote Now"
         link="/contact"
+        shades="rgba(127,127,127,1)"
       />
     </Grid>
   );

@@ -63,7 +63,8 @@ function AboutCardSection(props) {
         sx={{
           maxWidth: 250,
           height: "270px",
-          boxShadow: "0px 0px 3px 4px rgba(166,166,166,0.76)",
+          boxShadow: `0px 0px 3px 4px ${props.shades}`,
+          borderRadius: "50px 0 50px 0",
         }}
       >
         <CardContent>
@@ -144,10 +145,12 @@ const HomeAbout = () => {
               <AboutCardSection
                 title="Embroidery Digitizing"
                 description="Digitizing is just like any other digitizing process, it converts the image of a logo into a specific command which the embroidery machine can read and interpret in a specific streamlined and automated fashion. "
+                shades="rgba(127,127,127,1)"
               />
               <AboutCardSection
                 title="Quality is our Priority"
                 description="We always give preference to quality with the super fast turnaround time and we make sure that we fulfil all the requirements that were demanded by the customer at the time of order."
+                shades="rgba(163,0,47,1)"
               />
             </Grid>
           </Grid>
@@ -156,10 +159,12 @@ const HomeAbout = () => {
               <AboutCardSection
                 title="Affordable Pricing"
                 description="We are providing the best digitizing services at the most affordable pricing that you will not get from anywhere else."
+                shades="rgba(12,38,87,1)"
               />
               <AboutCardSection
                 title="Fabric Supportive Digitizing"
                 description="We do embroidery digitizing according to your required fabric whether it's Pique, Polyester, Twill, Cotton, Denim, Towel, Canvas, Linen, Wool, and more."
+                shades="rgba(199,30,71,1)"
               />
             </Grid>
           </Grid>
