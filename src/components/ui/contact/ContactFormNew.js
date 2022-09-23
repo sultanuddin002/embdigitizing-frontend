@@ -98,6 +98,7 @@ const ContactFormNew = () => {
       sx={{
         padding: "70px 70px",
         boxShadow: "3px 0px 5px 0px rgba(209,209,209,1)",
+        width: "100%",
       }}
     >
       {/* <Grid item>
@@ -132,7 +133,17 @@ const ContactFormNew = () => {
           onReset={handleFormReset}
           sx={{ "&> .MuiTextField-root": {} }}
         >
-          <label className={classes.label}>Full Name:</label>
+          <InputLabel
+            sx={{
+              fontFamily: "Oxygen",
+              fontWeight: 200,
+              color: theme.palette.primary.main,
+              fontSize: "18px",
+            }}
+          >
+            Full Name:
+          </InputLabel>
+          {/* <label className={classes.label}>Full Name:</label> */}
           <TextField
             classes={{ root: classes.inputSection }}
             sx={{ padding: "15px 0" }}
@@ -150,7 +161,17 @@ const ContactFormNew = () => {
             type="text"
             fullWidth
           />
-          <label className={classes.label}>Email:</label>
+          <InputLabel
+            sx={{
+              fontFamily: "Oxygen",
+              fontWeight: 200,
+              color: theme.palette.primary.main,
+              fontSize: "18px",
+            }}
+          >
+            Email:
+          </InputLabel>
+          {/* <label className={classes.label}>Email:</label> */}
           <TextField
             classes={{ root: classes.inputSection }}
             sx={{ padding: "15px 0" }}
@@ -168,7 +189,17 @@ const ContactFormNew = () => {
             type="text"
             size="small"
           />
-          <label className={classes.label}>Contact:</label>
+          <InputLabel
+            sx={{
+              fontFamily: "Oxygen",
+              fontWeight: 200,
+              color: theme.palette.primary.main,
+              fontSize: "18px",
+            }}
+          >
+            Contact:
+          </InputLabel>
+          {/* <label className={classes.label}>Contact:</label> */}
           <TextField
             sx={{ padding: "15px 0" }}
             id="outline-basic"
@@ -184,8 +215,17 @@ const ContactFormNew = () => {
             fullWidth
             type="text"
           />
-
-          <label className={classes.label}>Subject:</label>
+          <InputLabel
+            sx={{
+              fontFamily: "Oxygen",
+              fontWeight: 200,
+              color: theme.palette.primary.main,
+              fontSize: "18px",
+            }}
+          >
+            Subject:
+          </InputLabel>
+          {/* <label className={classes.label}>Subject:</label> */}
           <TextField
             sx={{ padding: "15px 0" }}
             id="outline-basic"
@@ -201,7 +241,17 @@ const ContactFormNew = () => {
             fullWidth
             type="text"
           />
-          <label className={classes.label}>Message:</label>
+          <InputLabel
+            sx={{
+              fontFamily: "Oxygen",
+              fontWeight: 200,
+              color: theme.palette.primary.main,
+              fontSize: "18px",
+            }}
+          >
+            Message:
+          </InputLabel>
+          {/* <label className={classes.label}>Message:</label> */}
           <TextField
             sx={{ padding: "15px 0" }}
             id="outlined-multiline-static"
