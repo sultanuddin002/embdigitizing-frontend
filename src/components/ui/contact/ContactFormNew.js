@@ -98,7 +98,7 @@ const ContactFormNew = () => {
       sx={{
         padding: "70px 70px",
         boxShadow: "3px 0px 5px 0px rgba(209,209,209,1)",
-        width: "100%",
+        width: "100%!important",
       }}
     >
       {/* <Grid item>
@@ -157,7 +157,6 @@ const ContactFormNew = () => {
             //   setContactDetails({ ...contactDetails, name: e.target.value })
             // }
             required
-            size="small"
             type="text"
             fullWidth
           />
@@ -187,7 +186,6 @@ const ContactFormNew = () => {
             required
             fullWidth
             type="text"
-            size="small"
           />
           <InputLabel
             sx={{
