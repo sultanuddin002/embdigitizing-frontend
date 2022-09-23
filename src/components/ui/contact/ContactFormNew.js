@@ -16,7 +16,7 @@ const USER_ID = "2wlb5kSsSCxex4f4r";
 const useStyles = makeStyles((theme) => ({
   inputSection: {
     [theme.breakpoints.up("md")]: {
-      width: "49%",
+      // width: "49%",
 
       "& > .MuiInputBase-root": {
         width: "100%",
@@ -147,7 +147,7 @@ const ContactFormNew = () => {
           <TextField
             classes={{ root: classes.inputSection }}
             sx={{ padding: "15px 0" }}
-            id="outline-size-small"
+            id="outline-basic"
             placeholder="Thomas James"
             // label="Full Name"
             variant="outlined"
@@ -174,7 +174,7 @@ const ContactFormNew = () => {
           <TextField
             classes={{ root: classes.inputSection }}
             sx={{ padding: "15px 0" }}
-            id="outline-size-small"
+            id="outline-basic"
             placeholder="support@embdigitized.com"
             // label="Email"
             variant="outlined"
