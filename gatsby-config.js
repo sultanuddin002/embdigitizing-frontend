@@ -9,11 +9,12 @@ module.exports = {
       options: {
         google: {
           families: [
-            "Roboto:n6,n5,n4,n3:latin",
+            "Barlow Condensed:n6,n5,n4,n3:latin",
             "Lato",
             "Poppins",
             "Rubik",
             "Anton",
+            "Oxygen"
           ],
         },
       },

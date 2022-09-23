@@ -82,13 +82,13 @@ const useStyles = makeStyles((theme) => ({
       width: "900px",
     },
     fontSize: "25px",
-    fontFamily: "Poppins!important",
+    // fontFamily: "Poppins!important",
   },
   sliderHeading: {
     [theme.breakpoints.up("md")]: {
       width: "800px",
     },
-    fontFamily: "Rubik!important",
+    // fontFamily: "Rubik!important",
   },
 }));
 
@@ -125,7 +125,7 @@ function SliderContent(props) {
             textTransform: "capitalize",
             padding: "20px 0",
             textAlign: "center",
-            fontFamily: "Poppins!important",
+            // fontFamily: "Poppins!important",
           }}
         >
           {props.subTitle}
@@ -182,7 +182,7 @@ const HomeSlider = () => {
         <Paper classes={{ root: classes.slideFive }}>
           <SliderContent
             title="100% Off at First Order"
-            subTitle="Sign up and get your first order free of charge"
+            subTitle="Sign up and get your first order free of cost"
             description="We are providing 100% off to our new customers on their first order. Contact us to find more detail"
             buttonText="Order Now"
           />
@@ -204,7 +204,7 @@ const HomeSlider = () => {
         <Paper classes={{ root: classes.slideTwo }}>
           <SliderContent
             title="Custom Embroidery Digitizing Services"
-            subTitle="Provide your details and we’ll design it for you"
+            subTitle="Provide your logo and details. We will get it digitze for you"
             description="Do you have an image or logo that you want to convert into embroidery digitizing for cap, hat, left chest, jacket back, bags, towel, and patch.? Contact us and we’ll assist you in providing high-quality embroidery digitizing services."
             buttonText="Order Now"
           />

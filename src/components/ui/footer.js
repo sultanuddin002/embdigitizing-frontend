@@ -188,8 +188,8 @@ function ServiceBullets(props) {
           <Typography
             component={Link}
             to={props.link}
-            variant="h3"
-            sx={{ color: "#fff", textDecoration: "none" }}
+            variant="h4"
+            sx={{ color: "#fff", textDecoration: "none", fontWeight: "400" }}
           >
             {props.text}
           </Typography>
@@ -284,8 +284,16 @@ const Footer = () => {
                   ...theme.typography.body1,
                 }}
               >
-                Sign Up To
+                Sign Up
               </Button>
+            </Grid>
+            <Grid item>
+              <Typography
+                variant="h3"
+                sx={{ color: "#fff", fontSize: "2.0rem" }}
+              >
+                to get
+              </Typography>
             </Grid>
             <Grid item>
               <Typography
@@ -330,12 +338,12 @@ const Footer = () => {
               classes={{ root: classes.contactContainer }}
             >
               <Grid item>
-                <IconSection text="555-555-555">
+                <IconSection text="+1(234)-567-890">
                   <PhoneIcon sx={{ color: theme.palette.common.white }} />
                 </IconSection>
               </Grid>
               <Grid item>
-                <IconSection text="mail@example.com">
+                <IconSection text="support@embdigitized.com">
                   <EmailIcon sx={{ color: theme.palette.common.white }} />
                 </IconSection>
               </Grid>

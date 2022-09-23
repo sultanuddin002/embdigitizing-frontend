@@ -82,7 +82,7 @@ const HomeTestimonials = () => {
     >
       <Grid item>
         <Typography
-          variant="h2"
+          variant="h1"
           sx={{
             color: "#000",
             textTransform: "uppercase",

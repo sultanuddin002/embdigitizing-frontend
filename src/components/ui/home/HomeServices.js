@@ -97,7 +97,7 @@ const HomeServices = () => {
         description="Are you looking for embroidery digitizing services with someone who has more than 22 years of experience of embroidery digitizing simply contact EMBdigitized where you will get the best quality with fastest turnaround time in the market."
         buttonTitle="Order Now"
         link="/contact"
-        shades="rgba(12,38,87,1)"
+        shades="rgba(163,0,47,1)"
       />
 
       <CardServiceSection
@@ -106,7 +106,7 @@ const HomeServices = () => {
         description="At EMBdigitized Custom Embroidery Patches we make it easy to create, order, and have your custom patches in no time at all. Our passion is bringing the benefits of on-demand manufacturing to everyone that is why we offer rapid turnaround times, fair pricing, and low minimum quantity orders for every custom patch project you create with us. "
         buttonTitle="Order Now"
         link="/contact"
-        shades="rgba(163,0,47,1)"
+        shades="rgba(127,127,127,1)"
       />
       <CardServiceSection
         image={serviceClientTwoImg}
@@ -114,7 +114,7 @@ const HomeServices = () => {
         description="Do you have a design with you and want to convert it into an embroidery digitizing format for your required fabric type? Simply contact us and provide the details about your work. We will offer you a comprehensive quote including cost and every query that you have regarding the work."
         buttonTitle="Quote Now"
         link="/contact"
-        shades="rgba(127,127,127,1)"
+        shades="rgba(12,38,87,1)"
       />
     </Grid>
   );

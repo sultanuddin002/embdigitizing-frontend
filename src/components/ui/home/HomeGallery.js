@@ -34,7 +34,7 @@ const HomeGallery = (props) => {
     >
       <Grid item>
         <Typography
-          variant="h2"
+          variant="h1"
           sx={{
             textTransform: "uppercase",
             color: "#fff",

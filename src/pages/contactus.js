@@ -5,7 +5,7 @@ import ContactInfo from "../components/ui/contact/ContactInfo";
 import ContactInfoNew from "../components/ui/contact/ContactInfoNew";
 import Layout from "../components/ui/layout";
 
-const Contact = () => {
+const ContactUs = () => {
   return (
     <Layout>
       <ContactInfoNew />
@@ -14,6 +14,6 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUs;
 
 export const Head = () => <title>Contact Us - EMBDigitized</title>;

@@ -142,7 +142,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const activeIndex = () => {
   if (typeof window != "undefined") {
     const found = routes.indexOf(
@@ -307,7 +306,7 @@ const HeaderTwo = () => {
         justifyContent="space-around"
         alignItems="center"
         classes={{ root: classes.topbarSection }}
-        sx={{ backgroundColor: theme.palette.secondary.main }}
+        sx={{ backgroundColor: theme.palette.primary.main }}
       >
         <Grid item md={5} xs={12}>
           <Grid
@@ -379,7 +378,13 @@ const HeaderTwo = () => {
       </Grid>
 
       {/* Top bar ends here */}
-      <AppBar sx={{ backgroundColor: "#fff" }} position="static">
+      <AppBar
+        sx={{
+          background:
+            "linear-gradient(255deg, rgba(255,255,255,1) 74%, rgba(189,196,201,1) 100%)",
+        }}
+        position="static"
+      >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box component={Link} to="/">
