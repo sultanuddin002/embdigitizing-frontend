@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("md")]: {
       alignContent: "flex-start",
+      padding: "30px 0",
     },
   },
   signUpContainer: {
@@ -318,6 +319,7 @@ const Footer = () => {
             justifyContent="flex-start"
             alignContent="center"
             columnSpacing={{ sm: 1 }}
+            sx={{ padding: matchesSM ? "30px 0 " : "0" }}
           >
             <Grid item>
               <Typography
@@ -343,12 +345,12 @@ const Footer = () => {
                 </IconSection>
               </Grid>
               <Grid item>
-                <IconSection text="support@embdigitized.com">
+                <IconSection text="embdigitized22@gmail.com">
                   <EmailIcon sx={{ color: theme.palette.common.white }} />
                 </IconSection>
               </Grid>
             </Grid>
-            <Grid item sx={{ pt: 2 }}>
+            <Grid item sx={{ pt: 2, paddingTop: matchesSM ? "20px" : "0" }}>
               {paymentArray.map((payment) => (
                 <PaymentSection img={payment.img} alt={payment.alt} />
               ))}

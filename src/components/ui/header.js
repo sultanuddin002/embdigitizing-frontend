@@ -26,7 +26,7 @@ import IconSection from "./IconSection";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedinIcon from "@mui/icons-material/Linkedin";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -119,11 +119,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   topbarSection: {
-    padding: "10px 0",
+    padding: "10px 10px",
+    [theme.breakpoints.up("md")]: {
+      padding: "10px 10px",
+    },
   },
   contactContainer: {
     [theme.breakpoints.up("md")]: {
-      justifyContent: "flex-start",
+      justifyContent: "center",
       alignItems: "center",
       paddingLeft: "50px",
     },
@@ -295,9 +298,12 @@ const HeaderTwo = () => {
   //   theme.breakpoints.between("sm", "md")
   // );
 
-  const laptopSizeMatches = useMediaQuery((theme) =>
-    theme.breakpoints.up("md")
-  );
+  // const laptopSizeMatches = useMediaQuery((theme) =>
+  //   theme.breakpoints.up("md")
+  // );
+
+  const matchesMD = useMediaQuery(theme.breakpoints.up("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("md"));
   return (
     // Add top bar here
     <>
@@ -316,7 +322,14 @@ const HeaderTwo = () => {
             // sx={{ paddingLeft: "80px" }}
             classes={{ root: classes.contactContainer }}
           >
-            <Typography variant="body2" sx={{ color: "#fff" }}>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "#fff",
+                textAlign: "center",
+                padding: matchesSM ? "10px 0" : "0",
+              }}
+            >
               To giving embroidery services with a one click to everyone.
             </Typography>
           </Grid>
@@ -326,16 +339,21 @@ const HeaderTwo = () => {
           <Grid
             container
             direction="row"
-            columnSpacing={{ md: 3, xs: 1 }}
+            columnSpacing={{ md: 1, xs: 1 }}
+            sx={{ padding: matchesSM ? "10px 0" : 0 }}
             classes={{ root: classes.contactContainer }}
           >
             <Grid item>
-              <IconSection text="555-555-555">
+              <IconSection text="+1(234)-567-890">
                 <PhoneIcon sx={{ color: theme.palette.common.white }} />
               </IconSection>
             </Grid>
             <Grid item>
-              <IconSection text="mail@example.com">
+              <IconSection
+                component="a"
+                href="mailto:embdigitized22@gmail.com"
+                text="embdigitized22@gmail.com"
+              >
                 <EmailIcon sx={{ color: theme.palette.common.white }} />
               </IconSection>
             </Grid>
@@ -352,31 +370,50 @@ const HeaderTwo = () => {
             container
             direction="row"
             columnSpacing={{ md: 1, xs: 1 }}
-            sx={{ paddingLeft: "30px" }}
+            sx={{ paddingLeft: "30px", padding: matchesSM ? "10px 0" : "0" }}
             classes={{ root: classes.contactContainer }}
           >
             <Grid item>
               {/* <TwitterIcon sx={{ color: theme.palette.common.white }} /> */}
-              <img
-                src={skype}
-                alt="skype icon"
-                style={{
-                  width: "23px",
-                  filter:
-                    "invert(100%) sepia(0%) saturate(7500%) hue-rotate(155deg) brightness(104%) contrast(107%)",
-                }}
-              />
+              <a
+                href="https://join.skype.com/invite/yfzh43Pc6DsO"
+                target="_blank"
+              >
+                <img
+                  src={skype}
+                  alt="skype icon"
+                  style={{
+                    width: "23px",
+                    filter:
+                      "invert(100%) sepia(0%) saturate(7500%) hue-rotate(155deg) brightness(104%) contrast(107%)",
+                  }}
+                />
+              </a>
             </Grid>
             <Grid item>
-              <FacebookIcon sx={{ color: theme.palette.common.white }} />
+              <a
+                href="https://www.facebook.com/profile.php?id=100085852315006"
+                target="_blank"
+              >
+                <FacebookIcon sx={{ color: theme.palette.common.white }} />
+              </a>
             </Grid>
             <Grid item>
-              <InstagramIcon sx={{ color: theme.palette.common.white }} />
+              <a href="https://www.instagram.com/embdigitized" target="_blank">
+                <InstagramIcon sx={{ color: theme.palette.common.white }} />
+              </a>
+            </Grid>
+            <Grid item>
+              <a
+                href="https://www.linkedin.com/in/embdigitized"
+                target="_blank"
+              >
+                <LinkedinIcon sx={{ color: theme.palette.common.white }} />
+              </a>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-
       {/* Top bar ends here */}
       <AppBar
         sx={{
@@ -385,7 +422,10 @@ const HeaderTwo = () => {
         }}
         position="static"
       >
-        <Container maxWidth="xl">
+        <Container
+          maxWidth="xl"
+          sx={{ padding: matchesSM ? "0" : "0px 70px!important" }}
+        >
           <Toolbar disableGutters>
             <Box component={Link} to="/">
               <img src={logo} alt="logo" className={classes.logo} />

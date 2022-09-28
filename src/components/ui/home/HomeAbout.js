@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   iconContainer: {
     [theme.breakpoints.down("md")]: {
-      // width: "500px!important",
+      width: "300px!important",
     },
     [theme.breakpoints.down("sm")]: {
       // width: "340px!important",

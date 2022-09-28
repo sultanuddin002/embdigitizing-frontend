@@ -12,6 +12,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import ContactForm from "./ContactForm";
 import { useMediaQuery } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedinIcon from "@mui/icons-material/Linkedin";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 // image
@@ -159,12 +160,12 @@ const ContactInfoNew = () => {
               </Grid>
               <Grid item>
                 <Typography variant="body2" sx={{ color: "#8E8E8E" }}>
-                  support@embdigitized.com
+                  embdigitized22@gmail.com
                 </Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item>
+          {/* <Grid item>
             <Grid container sx={{ padding: "" }}>
               <Grid item>
                 <EmailIcon
@@ -181,7 +182,7 @@ const ContactInfoNew = () => {
                 </Typography>
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
           <Grid item>
             <Typography
               variant="h3"
@@ -226,9 +227,14 @@ const ContactInfoNew = () => {
                 />
               </Grid>
               <Grid item>
-                <Typography variant="body2" sx={{ color: "#8E8E8E" }}>
-                  embdigitized
-                </Typography>
+                <a
+                  href="https://join.skype.com/invite/yfzh43Pc6DsO"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Typography variant="body2" sx={{ color: "#8E8E8E" }}>
+                    embdigitized
+                  </Typography>
+                </a>
               </Grid>
             </Grid>
           </Grid>
@@ -243,9 +249,14 @@ const ContactInfoNew = () => {
                 />
               </Grid>
               <Grid item>
-                <Typography variant="body2" sx={{ color: "#8E8E8E" }}>
-                  facebook.com/embdigitized
-                </Typography>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100085852315006"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Typography variant="body2" sx={{ color: "#8E8E8E" }}>
+                    facebook.com/embdigitized
+                  </Typography>
+                </a>
               </Grid>
             </Grid>
           </Grid>
@@ -260,9 +271,36 @@ const ContactInfoNew = () => {
                 />
               </Grid>
               <Grid item>
-                <Typography variant="body2" sx={{ color: "#8E8E8E" }}>
-                  instagram.com/embdigitized
-                </Typography>
+                <a
+                  href="https://www.instagram.com/embdigitized"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Typography variant="body2" sx={{ color: "#8E8E8E" }}>
+                    instagram.com/embdigitized
+                  </Typography>
+                </a>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Grid container sx={{ padding: "5px 0" }}>
+              <Grid item>
+                <LinkedinIcon
+                  sx={{
+                    color: theme.palette.primary.main,
+                    paddingRight: "10px ",
+                  }}
+                />
+              </Grid>
+              <Grid item>
+                <a
+                  href="https://www.linkedin.com/in/embdigitized"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Typography variant="body2" sx={{ color: "#8E8E8E" }}>
+                    linkedin.com/in/embdigitized
+                  </Typography>
+                </a>
               </Grid>
             </Grid>
           </Grid>
