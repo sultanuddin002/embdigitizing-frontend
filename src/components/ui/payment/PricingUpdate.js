@@ -9,6 +9,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 // icon
 import paypal from "../../../images/paypal.svg";
@@ -55,13 +56,15 @@ const useStyles = makeStyles((theme) => ({
   },
   boxContainer: {
     [theme.breakpoints.down("md")]: {
-      width: 450,
+      width: 350,
     },
   },
 }));
 
 function PricingCardOne(props) {
   const classes = useStyles();
+  // const matchesMD = useMediaQuery(theme.breakpoints.up("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Paper
       sx={{ margin: "20px 0", borderRadius: "40px" }}
@@ -75,7 +78,7 @@ function PricingCardOne(props) {
           padding: "10px 30px",
           borderRadius: "20px",
           position: "absolute",
-          marginLeft: props.left,
+          marginLeft: matchesSM ? props.leftMobile : props.left,
           marginTop: "-20px",
         }}
         classes={{ root: classes.button }}
@@ -230,6 +233,7 @@ const PricingUpdate = () => {
       direction="column"
       justifyContent="center"
       alignItems="center"
+      alignContent="center"
       sx={{ paddingBottom: "60px" }}
     >
       {/* Banner image */}
@@ -281,6 +285,7 @@ const PricingUpdate = () => {
               items="For caps and left chests"
               price="$15"
               left="191px"
+              leftMobile="191px"
               stitches="10,000 stitches"
               features={[...basicFeatures, ...similarDetails]}
               bg1="rgba(255,255,255,1)"
@@ -298,6 +303,7 @@ const PricingUpdate = () => {
               price="$25"
               stitches="20,000 stitches"
               left="147px"
+              leftMobile="147px"
               features={[...standardFeatures, ...similarDetails]}
               bg1="rgba(255,255,255,1)"
               bg2="rgba(127,127,127,1)"
@@ -313,7 +319,8 @@ const PricingUpdate = () => {
               items="For jacket backs"
               price="$40"
               stitches="50,000 stitches"
-              left="271px"
+              leftMobile="11rem"
+              left="17rem"
               features={[...premiumFeatures, ...similarDetails]}
               bg1="rgba(255,255,255,1)"
               bg2="rgba(12,38,87,1)"

@@ -34,7 +34,7 @@ const PortfolioContent = () => {
       direction="column"
       justifyContent="center"
       alignItems="center"
-      sx={{ marginBottom: "60px", padding: "0 60px" }}
+      sx={{ marginBottom: "60px" }}
     >
       {/* Banner image */}
       <Grid item classes={{ root: classes.bannerSection }}>
@@ -72,7 +72,7 @@ const PortfolioContent = () => {
           Check out our embroidery digitizing work
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid item sx={{ padding: "0 60px" }}>
         <HomeGallery />
       </Grid>
     </Grid>

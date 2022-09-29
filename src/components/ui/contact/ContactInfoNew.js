@@ -12,7 +12,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import ContactForm from "./ContactForm";
 import { useMediaQuery } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedinIcon from "@mui/icons-material/Linkedin";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 // image
@@ -285,7 +285,7 @@ const ContactInfoNew = () => {
           <Grid item>
             <Grid container sx={{ padding: "5px 0" }}>
               <Grid item>
-                <LinkedinIcon
+                <LinkedInIcon
                   sx={{
                     color: theme.palette.primary.main,
                     paddingRight: "10px ",

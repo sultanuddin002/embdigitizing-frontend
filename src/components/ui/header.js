@@ -26,7 +26,7 @@ import IconSection from "./IconSection";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
-import LinkedinIcon from "@mui/icons-material/Linkedin";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -408,7 +408,7 @@ const HeaderTwo = () => {
                 href="https://www.linkedin.com/in/embdigitized"
                 target="_blank"
               >
-                <LinkedinIcon sx={{ color: theme.palette.common.white }} />
+                <LinkedInIcon sx={{ color: theme.palette.common.white }} />
               </a>
             </Grid>
           </Grid>

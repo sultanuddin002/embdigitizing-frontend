@@ -185,7 +185,7 @@ const AboutSection = (props) => {
           variant="h1"
           sx={{
             textTransform: "uppercase",
-            padding: "50px 0",
+            padding: "50px 35px",
             fontWeight: "bold",
             color: "#000",
           }}
