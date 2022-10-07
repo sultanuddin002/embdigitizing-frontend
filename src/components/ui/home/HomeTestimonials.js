@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       margin: "20px 0",
     },
+    height: "350px",
   },
 }));
 

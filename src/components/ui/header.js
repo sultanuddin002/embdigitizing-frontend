@@ -330,7 +330,7 @@ const HeaderTwo = () => {
                 padding: matchesSM ? "10px 0" : "0",
               }}
             >
-              To giving embroidery services with a one click to everyone.
+              One-Click Solution for Embroidery Digizing Services.
             </Typography>
           </Grid>
         </Grid>
@@ -339,7 +339,7 @@ const HeaderTwo = () => {
           <Grid
             container
             direction="row"
-            columnSpacing={{ md: 1, xs: 1 }}
+            columnSpacing={{ md: 2, xs: 1 }}
             sx={{ padding: matchesSM ? "10px 0" : 0 }}
             classes={{ root: classes.contactContainer }}
           >

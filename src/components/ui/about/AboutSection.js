@@ -13,6 +13,7 @@ import pc from "../../../images/pc.svg";
 import money from "../../../images/money.svg";
 import quality from "../../../images/quality.svg";
 import support from "../../../images/support.svg";
+import { useMediaQuery } from "@mui/material";
 
 // image
 import bannerImg from "../../../images/slider-1.jpg";
@@ -57,10 +58,17 @@ const useStyles = makeStyles((theme) => ({
   iconContainer: {
     [theme.breakpoints.up("md")]: {
       width: "300px",
+      justifyContent: "space-evenly",
     },
     [theme.breakpoints.down("md")]: {
       width: "100%",
       padding: "10px 30px",
+      justifyContent: "center",
+    },
+  },
+  iconClass: {
+    [theme.breakpoints.down("md")]: {
+      width: "300px",
     },
   },
 }));
@@ -94,7 +102,7 @@ function DetailColumn(props) {
     <Grid item classes={{ root: classes.iconContainer }}>
       <Grid
         container="column"
-        justifyContent="space-evenly"
+        // justifyContent="space-evenly"
         alignItems="flex-start"
         columnSpacing={{ md: 6, sm: 4 }}
         rowSpacing={{ md: 2, sm: 4 }}
@@ -132,6 +140,7 @@ const iconSection = (
         alignItems="flex-start"
         rowSpacing={{ md: 4, sm: 4 }}
         // columnSpacing={{ md: 12 }}
+
         sx={{ padding: "30px 0 0px 0" }}
       >
         <DetailColumn image={patch} iconText="Skilled and Experience" />
@@ -176,7 +185,7 @@ const AboutSection = (props) => {
       >
         <Container
           classes={{ root: classes.innerGrid }}
-          maxWidth="xl"
+          maxWidth="100%"
         ></Container>
       </Grid>
       {/* Heading and sub heading */}

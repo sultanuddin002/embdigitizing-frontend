@@ -6,6 +6,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import theme from "../theme";
+import { Link } from "gatsby";
 import { withStyles } from "@mui/styles";
 // import required modules
 import { Navigation, Autoplay } from "swiper";
@@ -143,6 +144,8 @@ function SliderContent(props) {
       <Grid item>
         <Button
           classes={{ root: classes.button }}
+          component={Link}
+          to="/contact"
           sx={{
             ...theme.typography.body1,
             color: theme.palette.primary.main,

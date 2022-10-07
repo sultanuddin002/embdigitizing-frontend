@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     filter:
       "invert(11%) sepia(53%) saturate(2473%) hue-rotate(207deg) brightness(94%) contrast(100%)",
     [theme.breakpoints.up("md")]: {
-      height: "200px",
+      height: "250px",
     },
     [theme.breakpoints.down("md")]: {
       height: "100%",

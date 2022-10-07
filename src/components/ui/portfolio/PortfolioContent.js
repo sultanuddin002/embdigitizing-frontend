@@ -40,7 +40,7 @@ const PortfolioContent = () => {
       <Grid item classes={{ root: classes.bannerSection }}>
         <Container
           classes={{ root: classes.innerGrid }}
-          maxWidth="xl"
+          maxWidth="100%"
         ></Container>
       </Grid>
       {/* Heading and sub heading */}

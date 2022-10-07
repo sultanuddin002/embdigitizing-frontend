@@ -116,7 +116,7 @@ const EmbroiderySection = (props) => {
       >
         <Container
           classes={{ root: classes.innerGrid }}
-          maxWidth="xl"
+          maxWidth="100%"
         ></Container>
       </Grid>
       {/* Heading and sub heading */}

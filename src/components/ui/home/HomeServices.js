@@ -17,6 +17,7 @@ import serviceFourImg from "../../../images/client-1.jpg";
 import serviceClientOneImg from "../../../images/home-patches-2.jpg";
 import serviceClientTwoImg from "../../../images/get-quote.jpg";
 import { Link } from "gatsby";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -29,12 +30,16 @@ const useStyles = makeStyles((theme) => ({
 
 function CardServiceSection(props) {
   const classes = useStyles();
+
+  const matchesMD = useMediaQuery(theme.breakpoints.up("md"));
+  const matchesSD = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Grid item sx={{ padding: "20px 40px" }}>
       <Card
         sx={{
           maxWidth: 345,
-          height: "660px",
+          height: "700px",
           boxShadow: `0px 0px 3px 4px ${props.shades}`,
           borderRadius: "50px 0 50px 0",
         }}
@@ -59,7 +64,7 @@ function CardServiceSection(props) {
             {props.description}
           </Typography>
         </CardContent>
-        <CardActions sx={{ justifyContent: "center", padding: "20px 0" }}>
+        <CardActions sx={{ justifyContent: "center", padding: "50px 0" }}>
           <Button
             // className="serviceButton"
             classes={{ root: classes.button }}

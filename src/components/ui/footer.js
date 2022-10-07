@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   paymentImg: {
-    padding: "0 5px",
+    paddingRight: "5px",
     width: "40px",
   },
 }));
@@ -176,7 +176,12 @@ function ServiceBullets(props) {
   const classes = useStyles();
 
   return (
-    <Grid item>
+    <Grid
+      item
+      sx={{
+        paddingLeft: "0px!important",
+      }}
+    >
       <Grid
         container
         alignItems="flex-start!important"
@@ -336,7 +341,7 @@ const Footer = () => {
             <Grid
               container
               columnSpacing={{ md: 4, xs: 1 }}
-              sx={{ paddingLeft: "30px" }}
+              sx={{ paddingLeft: "6px", paddingBottom: "10px" }}
               classes={{ root: classes.contactContainer }}
             >
               <Grid item>
@@ -375,7 +380,7 @@ const Footer = () => {
       >
         <Grid item>
           <Grid container justifyContent="center" alignItems="center">
-            {footerPages.map((page) => (
+            {/* {footerPages.map((page) => (
               <Grid item>
                 <Typography
                   component={Link}
@@ -390,7 +395,7 @@ const Footer = () => {
                   {page.label}
                 </Typography>
               </Grid>
-            ))}
+            ))} */}
           </Grid>
         </Grid>
         <Grid item>

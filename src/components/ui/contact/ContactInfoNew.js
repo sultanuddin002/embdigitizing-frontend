@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     width: "100%",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center center",
+    backgroundPosition: "center right",
     backgroundSize: "cover",
   },
   innerGrid: {
@@ -103,7 +103,7 @@ const ContactInfoNew = () => {
         <Grid item classes={{ root: classes.bannerSection }}>
           <Container
             classes={{ root: classes.innerGrid }}
-            maxWidth="xl"
+            maxWidth="100%"
           ></Container>
         </Grid>
       </Grid>
@@ -155,7 +155,7 @@ const ContactInfoNew = () => {
             <Grid container sx={{ padding: "10px 0" }}>
               <Grid item>
                 <EmailIcon
-                  sx={{ color: theme.palette.primary.main, padding: "0 10px" }}
+                  sx={{ color: theme.palette.primary.main, paddingRight: "10px" }}
                 />
               </Grid>
               <Grid item>
