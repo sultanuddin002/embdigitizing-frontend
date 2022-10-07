@@ -187,6 +187,7 @@ function PricingCardOne(props) {
                 <Grid item>
                   <Typography
                     variant="body2"
+                    sx={{ width: "230px" }}
                     color={
                       props.bgColor ? "#fff" : theme.palette.secondary.main
                     }
